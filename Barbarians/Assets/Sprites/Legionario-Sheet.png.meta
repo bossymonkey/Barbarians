@@ -120,10 +120,10 @@ TextureImporter:
       name: Legionario-Sheet_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 344
-        width: 92
-        height: 167
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Legionario-Sheet_1
       rect:
         serializedVersion: 2
-        x: 188
-        y: 345
-        width: 92
-        height: 165
+        x: 172
+        y: 344
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Legionario-Sheet_2
       rect:
         serializedVersion: 2
-        x: 360
-        y: 345
-        width: 92
-        height: 164
+        x: 344
+        y: 344
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Legionario-Sheet_3
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 172
-        width: 92
-        height: 166
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Legionario-Sheet_4
       rect:
         serializedVersion: 2
-        x: 188
+        x: 172
         y: 172
-        width: 92
-        height: 163
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Legionario-Sheet_5
       rect:
         serializedVersion: 2
-        x: 376
+        x: 344
         y: 172
-        width: 77
-        height: 162
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Legionario-Sheet_6
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 0
-        width: 93
-        height: 164
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: Legionario-Sheet_7
       rect:
         serializedVersion: 2
-        x: 205
-        y: 1
-        width: 122
-        height: 162
+        x: 172
+        y: 0
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: Legionario-Sheet_8
       rect:
         serializedVersion: 2
-        x: 377
-        y: 1
-        width: 109
-        height: 160
+        x: 344
+        y: 0
+        width: 172
+        height: 172
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -120,10 +120,10 @@ TextureImporter:
       name: Diablillo-Sheet_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 262
-        width: 97
-        height: 109
+        x: 0
+        y: 256
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Diablillo-Sheet_1
       rect:
         serializedVersion: 2
-        x: 199
-        y: 265
-        width: 96
-        height: 107
+        x: 164
+        y: 256
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Diablillo-Sheet_2
       rect:
         serializedVersion: 2
-        x: 358
-        y: 277
-        width: 115
-        height: 97
+        x: 328
+        y: 256
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Diablillo-Sheet_3
       rect:
         serializedVersion: 2
-        x: 35
-        y: 137
-        width: 106
-        height: 110
+        x: 0
+        y: 128
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Diablillo-Sheet_4
       rect:
         serializedVersion: 2
-        x: 199
-        y: 136
-        width: 94
-        height: 111
+        x: 164
+        y: 128
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Diablillo-Sheet_5
       rect:
         serializedVersion: 2
-        x: 363
-        y: 134
-        width: 99
-        height: 113
+        x: 328
+        y: 128
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Diablillo-Sheet_6
       rect:
         serializedVersion: 2
-        x: 35
-        y: 6
-        width: 117
-        height: 116
+        x: 0
+        y: 0
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,9 +268,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 164
-        y: 6
-        width: 131
-        height: 90
+        y: 0
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: Diablillo-Sheet_8
       rect:
         serializedVersion: 2
-        x: 353
-        y: 6
-        width: 106
-        height: 112
+        x: 328
+        y: 0
+        width: 164
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
