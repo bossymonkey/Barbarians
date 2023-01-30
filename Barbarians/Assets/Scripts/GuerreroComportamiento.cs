@@ -25,9 +25,15 @@ public class GuerreroComportamiento : MonoBehaviour
     private void FixedUpdate()
     {
         target = EncontrarObjetivo();
-        if (HayEnemigoCerca(target))
+        if (HayEnemigoCerca(target) && !combatiendo)
         {
             Cargar();
+        }
+        else if(combatiendo)
+        {
+            Defender();
+            Atacar();
+            
         }
         else
         {
@@ -50,11 +56,22 @@ public class GuerreroComportamiento : MonoBehaviour
     private void Avanzar()
     {
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 1, transform.position.y), velocidadMovimiento * Time.deltaTime);
-        animator.SetBool("avanzando", true);
+        
     }
     private void Cargar()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
+        animator.SetBool("avanzando", true);
+    }
+    
+    private void Atacar()
+    {
+        animator.SetBool("atacando", true);
+    }
+
+    private void Defender()
+    {
+        transform.position = new Vector2(transform.position.x, transform.position.y);
         animator.SetBool("avanzando", false);
         animator.SetBool("luchando", true);
     }
@@ -64,7 +81,7 @@ public class GuerreroComportamiento : MonoBehaviour
         if (collision != null)
         {
             Debug.Log("colision");
-            animator.SetBool("atacando", true);
+            combatiendo = true;
         }
     }
 }
