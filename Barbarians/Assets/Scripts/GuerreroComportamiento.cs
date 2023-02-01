@@ -7,6 +7,7 @@ public class GuerreroComportamiento : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject target;
     private Animator animator;
+    private GameObject[] guerrerosAliados;
 
     private float vida = 100f;
     private float ataque = 10f;
@@ -15,18 +16,21 @@ public class GuerreroComportamiento : MonoBehaviour
     private bool combatiendo = false;
     private float timeControlCarga = 0f;
     private float timeControlAtaque= 0f;
+    private bool enFormacion = false;
 
     // Start is called before the first frame update
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
         animator= this.GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
         target = EncontrarObjetivo();
+        guerrerosAliados = EncontrarAliados();
         if (!combatiendo && HayEnemigoCerca(target))
         {
             timeControlCarga += Time.deltaTime;
@@ -50,6 +54,10 @@ public class GuerreroComportamiento : MonoBehaviour
             {
                 Defender();
             }
+        }
+        else if (EncontrarAliados() != null)
+        {
+
         }
         else
         {
@@ -99,9 +107,13 @@ public class GuerreroComportamiento : MonoBehaviour
     {
         timeControlAtaque = 0f;
     }
+    private GameObject[] EncontrarAliados()
+    {
+        return GameObject.FindGameObjectsWithTag("guerrero");
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("demon"))
+        if (collision.gameObject.CompareTag("diablillo"))
         {
             combatiendo = true;
             timeControlCarga = 0f;

@@ -14,6 +14,7 @@ public class DiablilloComportamiento : MonoBehaviour
     private float velocidadMovimiento = 1.5f;
     private bool combatiendo = false;
     private float timeControlAtaque = 0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -80,9 +81,10 @@ public class DiablilloComportamiento : MonoBehaviour
     {
         timeControlAtaque = 0f;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("barbarian"))
+        if (collision.gameObject.CompareTag("guerrero"))
         {
             combatiendo = true;
         }
