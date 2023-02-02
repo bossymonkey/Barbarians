@@ -7,7 +7,6 @@ public class GuerreroComportamiento : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject target;
     private Animator animator;
-    private GameObject[] guerrerosAliados;
 
     private float vida = 100f;
     private float ataque = 10f;
@@ -29,9 +28,15 @@ public class GuerreroComportamiento : MonoBehaviour
     private void FixedUpdate()
     {
         
-        target = EncontrarObjetivo();
-        //guerrerosAliados = EncontrarAliados();
-        if (!combatiendo && HayEnemigoCerca(target))
+        /*target = EncontrarObjetivo();
+        if(target == null)
+        {
+            if (ControladorFormacion.GuerrerosList.Count > 0)
+            {
+                enFormacion = true;
+            }
+        }
+        else if (!combatiendo && HayEnemigoCerca(target))
         {
             timeControlCarga += Time.deltaTime;
             if (timeControlCarga >= 3f) 
@@ -55,15 +60,15 @@ public class GuerreroComportamiento : MonoBehaviour
                 Defender();
             }
         }
-        /*else if (EncontrarAliados() != null)
+        else if(ControladorFormacion.GuerrerosList.Count > 0)
         {
-
-        }*/
-        else
+            enFormacion= true;
+        }
+        else if(!enFormacion)
         {
             Avanzar();
             
-        }
+        }*/
     }
 
     private GameObject EncontrarObjetivo()
@@ -108,10 +113,7 @@ public class GuerreroComportamiento : MonoBehaviour
     {
         timeControlAtaque = 0f;
     }
-    private GameObject[] EncontrarAliados()
-    {
-        return GameObject.FindObjectsOfType<GameObject>();
-    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("demon"))
@@ -120,5 +122,8 @@ public class GuerreroComportamiento : MonoBehaviour
             timeControlCarga = 0f;
         }
     }
-    
+    public bool EnFormacion
+    {
+        get { return this.enFormacion; }
+    }
 }

@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     private readonly float[] zonaBar = { -7f, -15f, -1f, -5f};
     private readonly float[] zonaDem = { 7f, 15f, -1f, -5f };
 
+    [SerializeField] private GameObject controlFormaciones;
     [SerializeField] private GameObject guerreroObject;
     [SerializeField] private GameObject diablilloObject;
     [SerializeField] private int guerrerosNum;
@@ -19,12 +20,14 @@ public class Spawner : MonoBehaviour
 
     private GameObject thisBarbarian;
     private GameObject thisDemon;
-    private static List<GameObject> guerrerosList;
+    private List<GameObject> guerrerosList;
     // Start is called before the first frame update
     void Start()
     {
         guerrerosList = SpawnBarbarians(guerreroObject, guerrerosNum);
         SpawnDemons(diablilloObject, diablilloNum);
+        Instantiate(controlFormaciones, new Vector2(-5f, 6f), Quaternion.identity);
+        ControladorFormacion.SetGuerrerosList(guerrerosList);
     }
 
     // Update is called once per frame
@@ -71,8 +74,8 @@ public class Spawner : MonoBehaviour
         return new Vector2(UnityEngine.Random.Range(range1x, range2x), UnityEngine.Random.Range(range1y, range2y));
     }
     
-    public static List<GameObject> GuerrerosList
+    public List<GameObject> GuerrerosList
     {
-        get { return guerrerosList; }
+        get { return this.guerrerosList; }
     }
 }
