@@ -19,10 +19,11 @@ public class Spawner : MonoBehaviour
 
     private GameObject thisBarbarian;
     private GameObject thisDemon;
+    private static List<GameObject> guerrerosList;
     // Start is called before the first frame update
     void Start()
     {
-        SpawnBarbarians(guerreroObject, guerrerosNum);
+        guerrerosList = SpawnBarbarians(guerreroObject, guerrerosNum);
         SpawnDemons(diablilloObject, diablilloNum);
     }
 
@@ -32,9 +33,10 @@ public class Spawner : MonoBehaviour
         
     }
 
-    private void SpawnBarbarians(GameObject unidad,int conteo)
+    private List<GameObject> SpawnBarbarians(GameObject unidad,int conteo)
     {
         Vector2 posicion;
+        List<GameObject> barbarianList = new();
         if (conteo > 0)
         {
             for (int i = 0; i < conteo; i++)
@@ -42,10 +44,12 @@ public class Spawner : MonoBehaviour
                 posicion = RandomPosition(zonaBar[0], zonaBar[1], zonaBar[2], zonaBar[3]);
                 thisBarbarian = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
                 thisBarbarian.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
+                barbarianList.Add(thisBarbarian);
                 Debug.Log(thisBarbarian.transform.position.ToString());
             }
         }
         else Debug.Log("no hay "+unidad.gameObject.name+" que spawnear");
+        return barbarianList;
     }
     private void SpawnDemons(GameObject unidad,int conteo)
     {
@@ -66,5 +70,9 @@ public class Spawner : MonoBehaviour
     {
         return new Vector2(UnityEngine.Random.Range(range1x, range2x), UnityEngine.Random.Range(range1y, range2y));
     }
-
+    
+    public static List<GameObject> GuerrerosList
+    {
+        get { return guerrerosList; }
+    }
 }

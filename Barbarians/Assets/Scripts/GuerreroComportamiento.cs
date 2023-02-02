@@ -110,7 +110,7 @@ public class GuerreroComportamiento : MonoBehaviour
     }
     private GameObject[] EncontrarAliados()
     {
-        return GameObject.FindGameObjectsWithTag("barbarian");
+        return GameObject.FindObjectsOfType<GameObject>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
