@@ -64,12 +64,12 @@ public class DiablilloComportamiento : MonoBehaviour
     }
     private void Avanzar()
     {
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - 1, transform.position.y), velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 1, transform.position.y,transform.position.z), velocidadMovimiento * Time.deltaTime);
         animator.SetBool("avanzando", true);
     }
     private void Cargar()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
         animator.SetBool("avanzando", true);
     }
     private void Atacar()
@@ -81,8 +81,7 @@ public class DiablilloComportamiento : MonoBehaviour
     {
         timeControlAtaque = 0f;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("barbarian"))
         {

@@ -34,7 +34,7 @@ public class GuerreroComportamiento : MonoBehaviour
         if (!combatiendo && HayEnemigoCerca(target))
         {
             timeControlCarga += Time.deltaTime;
-            if (timeControlCarga >= 5f) 
+            if (timeControlCarga >= 3f) 
             {
                 Cargar();
             }
@@ -80,12 +80,12 @@ public class GuerreroComportamiento : MonoBehaviour
 
     private void Avanzar()
     {
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 1, transform.position.y), velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + 1, transform.position.y,transform.position.z), velocidadMovimiento * Time.deltaTime);
         animator.SetBool("avanzando", true);
     }
     private void Cargar()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
         animator.SetBool("defendiendo", false);
         animator.SetBool("avanzando", true);
     }
@@ -98,7 +98,7 @@ public class GuerreroComportamiento : MonoBehaviour
 
     private void Defender()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y);
+        transform.position = new Vector3(transform.position.x, transform.position.y,transform.position.z);
         animator.SetBool("avanzando", false);
         animator.SetBool("atacando", false);
         animator.SetBool("defendiendo", true);
@@ -112,7 +112,7 @@ public class GuerreroComportamiento : MonoBehaviour
     {
         return GameObject.FindGameObjectsWithTag("barbarian");
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("demon"))
         {

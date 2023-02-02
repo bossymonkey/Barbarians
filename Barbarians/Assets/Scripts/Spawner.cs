@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int guerrerosNum;
     [SerializeField] private int diablilloNum;
 
+    private GameObject thisBarbarian;
+    private GameObject thisDemon;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,21 +34,37 @@ public class Spawner : MonoBehaviour
 
     private void SpawnBarbarians(GameObject unidad,int conteo)
     {
-        for (int i = 0; i < conteo; i++)
+        Vector2 posicion;
+        if (conteo > 0)
         {
-            Instantiate(unidad, RandomPosition(zonaBar[0], zonaBar[1], zonaBar[2], zonaBar[3]), Quaternion.identity);
+            for (int i = 0; i < conteo; i++)
+            {
+                posicion = RandomPosition(zonaBar[0], zonaBar[1], zonaBar[2], zonaBar[3]);
+                thisBarbarian = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
+                thisBarbarian.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
+                Debug.Log(thisBarbarian.transform.position.ToString());
+            }
         }
+        else Debug.Log("no hay "+unidad.gameObject.name+" que spawnear");
     }
     private void SpawnDemons(GameObject unidad,int conteo)
     {
-        for (int i = 0; i < conteo; i++)
+        Vector2 posicion;
+        if (conteo > 0)
         {
-            Instantiate(unidad, RandomPosition(zonaDem[0], zonaDem[1], zonaDem[2], zonaDem[3]),Quaternion.identity);
+            for (int i = 0; i < conteo; i++)
+            {
+                posicion = RandomPosition(zonaDem[0], zonaDem[1], zonaDem[2], zonaDem[3]);
+                thisDemon = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
+                thisDemon.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
+                Debug.Log(thisDemon.transform.position.ToString());
+            }
         }
+        else Debug.Log("no hay " + unidad.gameObject.name + " que spawnear");
     }
-    private Vector3 RandomPosition(float range1x,float range2x,float range1y,float range2y)
+    private Vector2 RandomPosition(float range1x,float range2x,float range1y,float range2y)
     {
-        return new Vector3(UnityEngine.Random.Range(range1x, range2x), UnityEngine.Random.Range(range1y, range2y), 0f);
+        return new Vector2(UnityEngine.Random.Range(range1x, range2x), UnityEngine.Random.Range(range1y, range2y));
     }
 
 }
