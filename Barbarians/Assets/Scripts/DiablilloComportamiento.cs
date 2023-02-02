@@ -84,7 +84,7 @@ public class DiablilloComportamiento : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("guerrero"))
+        if (collision.gameObject.CompareTag("barbarian"))
         {
             combatiendo = true;
         }

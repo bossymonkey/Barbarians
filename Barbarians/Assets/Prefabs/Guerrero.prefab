@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 2143967416203953624}
   - component: {fileID: 2143967416203953625}
   m_Layer: 0
-  m_Name: Legionario
-  m_TagString: Guerrero
+  m_Name: Guerrero
+  m_TagString: barbarian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -23,14 +23,14 @@ public class GuerreroComportamiento : MonoBehaviour
     {
         rb = this.GetComponent<Rigidbody2D>();
         animator= this.GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        
         target = EncontrarObjetivo();
-        guerrerosAliados = EncontrarAliados();
+        //guerrerosAliados = EncontrarAliados();
         if (!combatiendo && HayEnemigoCerca(target))
         {
             timeControlCarga += Time.deltaTime;
@@ -55,13 +55,14 @@ public class GuerreroComportamiento : MonoBehaviour
                 Defender();
             }
         }
-        else if (EncontrarAliados() != null)
+        /*else if (EncontrarAliados() != null)
         {
 
-        }
+        }*/
         else
         {
             Avanzar();
+            
         }
     }
 
@@ -109,11 +110,11 @@ public class GuerreroComportamiento : MonoBehaviour
     }
     private GameObject[] EncontrarAliados()
     {
-        return GameObject.FindGameObjectsWithTag("guerrero");
+        return GameObject.FindGameObjectsWithTag("barbarian");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("diablillo"))
+        if (collision.gameObject.CompareTag("demon"))
         {
             combatiendo = true;
             timeControlCarga = 0f;
