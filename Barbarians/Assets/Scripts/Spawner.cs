@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 
 public class Spawner : MonoBehaviour
@@ -21,19 +22,36 @@ public class Spawner : MonoBehaviour
     private GameObject thisBarbarian;
     private GameObject thisDemon;
     private List<GameObject> guerrerosList;
+    private ControladorFormacion cf = new ControladorFormacion();
+    private float timeControl;
+
     // Start is called before the first frame update
     void Start()
     {
         guerrerosList = SpawnBarbarians(guerreroObject, guerrerosNum);
         SpawnDemons(diablilloObject, diablilloNum);
-        Instantiate(controlFormaciones, new Vector2(-5f, 6f), Quaternion.identity);
-        ControladorFormacion.SetGuerrerosList(guerrerosList);
+        controlFormaciones = Instantiate(controlFormaciones, new Vector2(-5f, 6f), Quaternion.identity);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timeControl += Time.deltaTime;
+        if (timeControl >= 5f)
+        {
+            foreach (GameObject go in guerrerosList)
+            {
+                if (go != null)
+                {
+                    Debug.Log(go.transform.position.ToString());
+                }
+                else Debug.Log("objeto nulo");
+            }
+            timeControl = 0f;
+            cf.CrearFormacion(guerrerosList, cf.ObtenerPuntoMedio(guerrerosList));
+            timeControl = 0f;
+        }
     }
 
     private List<GameObject> SpawnBarbarians(GameObject unidad,int conteo)

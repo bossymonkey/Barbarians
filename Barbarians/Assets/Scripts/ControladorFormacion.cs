@@ -2,33 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControladorFormacion : MonoBehaviour
+public class ControladorFormacion
 {
-    private List<GameObject> guerrerosList;
-    private float timeControl = 5f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    private void Awake()
-    {
-        guerrerosList = Spawner.GuerrerosList;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        timeControl += Time.deltaTime;
-        if (timeControl >= 5f)
-        {
-            CrearFormacion(guerrerosList, ObtenerPuntoMedio(guerrerosList));
-            timeControl= 0f;
-        }
-    }
-
-    private Vector2 ObtenerPuntoMedio(List<GameObject> lista)
+    public Vector2 ObtenerPuntoMedio(List<GameObject> lista)
     {
         float xmin = lista[0].transform.position.x;
         float xmax = lista[0].transform.position.x;
@@ -56,7 +33,7 @@ public class ControladorFormacion : MonoBehaviour
         }
         return new Vector2(xmax-xmin, ymax-ymin);
     }
-    private void CrearFormacion(List<GameObject> lista, Vector2 puntoMedio)
+    public void CrearFormacion(List<GameObject> lista, Vector2 puntoMedio)
     {
         float posx = 5f;
         float posy = 4f;
@@ -73,12 +50,8 @@ public class ControladorFormacion : MonoBehaviour
             Debug.Log(go.GetInstanceID()+" x ="+go.transform.position.x+" y="+go.transform.position.y);
         }
     }
-    public List<GameObject> GetGuerrerosList
+    public List<GameObject> GuerrerosList
     {
-        get { return this.guerrerosList; }
-    }
-    public List<GameObject> SetGuerrerosList
-    {
-        set { this.guerrerosList = value; }
+        get;set;
     }
 }

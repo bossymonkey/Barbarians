@@ -8,6 +8,7 @@ TagManager:
   - demon
   - diablillo
   - guerrero
+  - formacionController
   layers:
   - Default
   - TransparentFX
