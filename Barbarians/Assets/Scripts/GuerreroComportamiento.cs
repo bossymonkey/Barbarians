@@ -124,6 +124,10 @@ public class GuerreroComportamiento : MonoBehaviour
     }
     public bool EnFormacion
     {
-        get { return this.enFormacion; }
+        get;set;
+    }
+    public float VelocidadMovimiento
+    {
+        get; set;
     }
 }

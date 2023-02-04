@@ -21,37 +21,18 @@ public class Spawner : MonoBehaviour
 
     private GameObject thisBarbarian;
     private GameObject thisDemon;
-    private List<GameObject> guerrerosList;
-    private ControladorFormacion cf = new ControladorFormacion();
-    private float timeControl;
 
     // Start is called before the first frame update
     void Start()
     {
-        guerrerosList = SpawnBarbarians(guerreroObject, guerrerosNum);
+        SpawnBarbarians(guerreroObject, guerrerosNum);
         SpawnDemons(diablilloObject, diablilloNum);
-        controlFormaciones = Instantiate(controlFormaciones, new Vector2(-5f, 6f), Quaternion.identity);
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeControl += Time.deltaTime;
-        if (timeControl >= 5f)
-        {
-            foreach (GameObject go in guerrerosList)
-            {
-                if (go != null)
-                {
-                    Debug.Log(go.transform.position.ToString());
-                }
-                else Debug.Log("objeto nulo");
-            }
-            timeControl = 0f;
-            cf.CrearFormacion(guerrerosList, cf.ObtenerPuntoMedio(guerrerosList));
-            timeControl = 0f;
-        }
+
     }
 
     private List<GameObject> SpawnBarbarians(GameObject unidad,int conteo)
@@ -66,7 +47,7 @@ public class Spawner : MonoBehaviour
                 thisBarbarian = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
                 thisBarbarian.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
                 barbarianList.Add(thisBarbarian);
-                Debug.Log(thisBarbarian.transform.position.ToString());
+                //Debug.Log(thisBarbarian.transform.position.ToString());
             }
         }
         else Debug.Log("no hay "+unidad.gameObject.name+" que spawnear");
@@ -94,6 +75,6 @@ public class Spawner : MonoBehaviour
     
     public List<GameObject> GuerrerosList
     {
-        get { return this.guerrerosList; }
+        get; set;
     }
 }
