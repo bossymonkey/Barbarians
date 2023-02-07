@@ -5,12 +5,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private ControladorFormacion cf = new ControladorFormacion();
 
-    private List<GameObject> guerrerosList;
-    private float timeControl;
-    private Vector2 puntoMedio;
-    private bool flag = false;
+    public static FormationController fc = new();
     
     // Start is called before the first frame update
     void Start()
@@ -22,22 +18,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
-        timeControl += Time.deltaTime;
-        if(timeControl >= 3f)
-        {
-            guerrerosList = cf.GenerarListaGuerreros();
-            if (!flag)
-            {
-                puntoMedio = cf.ObtenerPuntoMedio(guerrerosList);
-                flag = true;
-            }
-            Debug.Log(puntoMedio);
-            timeControl= 0f;
-        }
-        if (flag)
-        {
-            cf.CrearFormacion(guerrerosList, puntoMedio);
-        }
     }
 
 }

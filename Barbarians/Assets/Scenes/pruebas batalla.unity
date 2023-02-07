@@ -370,11 +370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ebc779cdc904c4ab2436adf693368f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlFormaciones: {fileID: 8357755764804400582, guid: 591f35e3db8d77b4e93a8d17a1a2e162, type: 3}
   guerreroObject: {fileID: 2143967416203953571, guid: 2c0afbc2eebe47c4da0b4da7c63f181a, type: 3}
   diablilloObject: {fileID: 6941533090287250282, guid: 38c9e664c03915b48a076a22b152f008, type: 3}
-  guerrerosNum: 50
-  diablilloNum: 0
+  guerrerosNum: 200
+  diablilloNum: 200
 --- !u!4 &668121365
 Transform:
   m_ObjectHideFlags: 0

@@ -13,68 +13,44 @@ public class Spawner : MonoBehaviour
     private readonly float[] zonaBar = { -7f, -15f, -1f, -5f};
     private readonly float[] zonaDem = { 7f, 15f, -1f, -5f };
 
-    [SerializeField] private GameObject controlFormaciones;
     [SerializeField] private GameObject guerreroObject;
     [SerializeField] private GameObject diablilloObject;
     [SerializeField] private int guerrerosNum;
     [SerializeField] private int diablilloNum;
 
-    private GameObject thisBarbarian;
-    private GameObject thisDemon;
+    private int id = 0;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        SpawnBarbarians(guerreroObject, guerrerosNum);
-        SpawnDemons(diablilloObject, diablilloNum);
+        SpawnUnits(guerreroObject, guerrerosNum, zonaBar[0], zonaBar[1], zonaBar[2], zonaBar[3]);
+        SpawnUnits(diablilloObject, diablilloNum, zonaDem[0], zonaDem[1], zonaDem[2], zonaDem[3]);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
     }
 
-    private List<GameObject> SpawnBarbarians(GameObject unidad,int conteo)
+    private void SpawnUnits(GameObject unit,int cont, float range1x, float range2x, float range1y, float range2y)
     {
-        Vector2 posicion;
-        List<GameObject> barbarianList = new();
-        if (conteo > 0)
+        GameObject instanceUnit;
+
+        if (cont > 0)
         {
-            for (int i = 0; i < conteo; i++)
+            for (int i = 0; i < cont; i++)
             {
-                posicion = RandomPosition(zonaBar[0], zonaBar[1], zonaBar[2], zonaBar[3]);
-                thisBarbarian = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
-                thisBarbarian.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
-                barbarianList.Add(thisBarbarian);
-                //Debug.Log(thisBarbarian.transform.position.ToString());
+                instanceUnit = Instantiate(unit, RandomPosition(range1x, range2x, range1y, range2y), Quaternion.identity);
+                instanceUnit.GetComponent<GuerreroComportamiento>().Id = id;
+                this.id++;
             }
         }
-        else Debug.Log("no hay "+unidad.gameObject.name+" que spawnear");
-        return barbarianList;
+        else Debug.Log("no hay "+unit+" que spawnear");
     }
-    private void SpawnDemons(GameObject unidad,int conteo)
-    {
-        Vector2 posicion;
-        if (conteo > 0)
-        {
-            for (int i = 0; i < conteo; i++)
-            {
-                posicion = RandomPosition(zonaDem[0], zonaDem[1], zonaDem[2], zonaDem[3]);
-                thisDemon = Instantiate(unidad, posicion, Quaternion.identity) as GameObject;
-                thisDemon.transform.position = new Vector3(posicion.x, posicion.y, posicion.y);
-                Debug.Log(thisDemon.transform.position.ToString());
-            }
-        }
-        else Debug.Log("no hay " + unidad.gameObject.name + " que spawnear");
-    }
+
     private Vector2 RandomPosition(float range1x,float range2x,float range1y,float range2y)
     {
         return new Vector2(UnityEngine.Random.Range(range1x, range2x), UnityEngine.Random.Range(range1y, range2y));
-    }
-    
-    public List<GameObject> GuerrerosList
-    {
-        get; set;
     }
 }

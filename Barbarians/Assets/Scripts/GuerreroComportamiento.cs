@@ -8,6 +8,7 @@ public class GuerreroComportamiento : MonoBehaviour
     private GameObject target;
     private Animator animator;
 
+    private int id;
     private float vida = 100f;
     private float ataque = 10f;
     private float velocidadAtaque = 0.80f;
@@ -16,6 +17,7 @@ public class GuerreroComportamiento : MonoBehaviour
     private float timeControlCarga = 0f;
     private float timeControlAtaque= 0f;
     private bool enFormacion = false;
+    private float timeControl = 0f;
 
     // Start is called before the first frame update
     private void Start()
@@ -27,16 +29,10 @@ public class GuerreroComportamiento : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        
-        /*target = EncontrarObjetivo();
-        if(target == null)
-        {
-            if (ControladorFormacion.GuerrerosList.Count > 0)
-            {
-                enFormacion = true;
-            }
-        }
-        else if (!combatiendo && HayEnemigoCerca(target))
+
+        target = EncontrarObjetivo();
+
+        if (!combatiendo && HayEnemigoCerca(target))
         {
             timeControlCarga += Time.deltaTime;
             if (timeControlCarga >= 3f) 
@@ -60,15 +56,10 @@ public class GuerreroComportamiento : MonoBehaviour
                 Defender();
             }
         }
-        else if(ControladorFormacion.GuerrerosList.Count > 0)
-        {
-            enFormacion= true;
-        }
         else if(!enFormacion)
         {
             Avanzar();
-            
-        }*/
+        }
     }
 
     private GameObject EncontrarObjetivo()
@@ -121,6 +112,12 @@ public class GuerreroComportamiento : MonoBehaviour
             combatiendo = true;
             timeControlCarga = 0f;
         }
+    }
+
+    public int Id
+    {
+        get { return id; }
+        set { id = value; }
     }
     public bool EnFormacion
     {
