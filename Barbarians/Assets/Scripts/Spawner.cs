@@ -41,6 +41,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < cont; i++)
             {
                 instanceUnit = Instantiate(unit, RandomPosition(range1x, range2x, range1y, range2y), Quaternion.identity);
+                instanceUnit.SetActive(false);
                 instanceUnit.GetComponent<UnitController>().Id = i;
             }
         }

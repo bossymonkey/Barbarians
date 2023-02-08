@@ -8,10 +8,6 @@ public class UnitController : MonoBehaviour
     private int id;
     [SerializeField]private string unitType;
 
-    private void Update()
-    {
-        Debug.Log(unitType);
-    }
     public int Id
     {
         get { return id; }
