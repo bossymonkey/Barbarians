@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
-    public static FormationController fc = new();
     
-    // Start is called before the first frame update
-    void Start()
-    {
+    public List<KeyValuePair<string,FormationController>> fcmap;
 
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void GetFormationMaps()
     {
-        
+        List<UnitController> masterList = FindObjectsOfType<UnitController>().ToList();
+        SortedSet<string> stringSet = new();
+
+        foreach (UnitController uc in masterList)
+        {
+            stringSet.Add(uc.UnitType);
+        }
+
+        foreach (string st in stringSet)
+        {
+            fcmap.Add(new KeyValuePair<string,FormationController>(st, new FormationController()));
+        }
     }
 
 }

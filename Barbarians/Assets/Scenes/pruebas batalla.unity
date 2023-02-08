@@ -372,8 +372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   guerreroObject: {fileID: 2143967416203953571, guid: 2c0afbc2eebe47c4da0b4da7c63f181a, type: 3}
   diablilloObject: {fileID: 6941533090287250282, guid: 38c9e664c03915b48a076a22b152f008, type: 3}
-  guerrerosNum: 200
-  diablilloNum: 200
+  guerrerosNum: 25
+  diablilloNum: 25
 --- !u!4 &668121365
 Transform:
   m_ObjectHideFlags: 0
@@ -478,8 +478,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465787431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2113, y: -4.1484, z: 10}
-  m_LocalScale: {x: 36.830086, y: 8.356818, z: 10}
+  m_LocalPosition: {x: -0.0873, y: -9.952, z: 10}
+  m_LocalScale: {x: 60.055046, y: 19.964334, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

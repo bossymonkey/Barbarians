@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int guerrerosNum;
     [SerializeField] private int diablilloNum;
 
-    private int id = 0;
 
 
     void Start()
@@ -42,8 +41,7 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < cont; i++)
             {
                 instanceUnit = Instantiate(unit, RandomPosition(range1x, range2x, range1y, range2y), Quaternion.identity);
-                instanceUnit.GetComponent<GuerreroComportamiento>().Id = id;
-                this.id++;
+                instanceUnit.GetComponent<UnitController>().Id = i;
             }
         }
         else Debug.Log("no hay "+unit+" que spawnear");

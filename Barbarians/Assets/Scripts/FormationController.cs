@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FormationController
 {
-    public List<GameObject> objetosAFormar = new();
-    public List<Vector3> posiciones = new();
+    private List<GameObject> objetosAFormar = new();
+    private List<Vector3> posiciones = new();
 
     public void GetIds()
     {
@@ -45,7 +45,7 @@ public class FormationController
     public List<Vector3> GetPositions(List<GameObject> objetosAFormar, Vector3 midPoint)
     {
         List<Vector3> posiciones = new();
-        Vector3 targetVector = new();
+        Vector3 targetVector;
         float posx = 3f;
         float posy = 3f;
 
@@ -64,5 +64,15 @@ public class FormationController
         }
 
         return posiciones;
+    }
+    public List<GameObject> ObjetosAFormar
+    {
+        get { return objetosAFormar; }
+        set { objetosAFormar = value; }
+    }
+    public List<Vector3> Posiciones
+    {
+        get { return posiciones; }
+        set { posiciones = value; }
     }
 }

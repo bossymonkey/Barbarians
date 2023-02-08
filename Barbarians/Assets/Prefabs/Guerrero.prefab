@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 2143967416203953630}
   - component: {fileID: 2143967416203953629}
   - component: {fileID: 2143967416203953628}
-  - component: {fileID: 2143967416203953624}
   - component: {fileID: 2143967416203953625}
+  - component: {fileID: 2143967416203953624}
+  - component: {fileID: -2676339610131571375}
   m_Layer: 0
   m_Name: Guerrero
   m_TagString: barbarian
@@ -112,7 +113,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143967416203953571}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -125,18 +126,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2143967416203953624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33074b2f43f79c458443289c47a41c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &2143967416203953625
 Animator:
   serializedVersion: 5
@@ -157,3 +146,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2143967416203953624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33074b2f43f79c458443289c47a41c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2676339610131571375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b14a942712d1164cbfd399710a8090d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitType: guerrero

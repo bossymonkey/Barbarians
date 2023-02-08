@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6941533090287250281}
   - component: {fileID: 6941533090287250276}
   - component: {fileID: 6941533090287250277}
+  - component: {fileID: 1641989623444639996}
   m_Layer: 0
   m_Name: Diablillo
   m_TagString: demon
@@ -157,3 +158,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e07baed8a784942aeb4e0a6d1b7fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1641989623444639996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941533090287250282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b14a942712d1164cbfd399710a8090d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitType: diablillo

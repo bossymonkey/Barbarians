@@ -8,7 +8,6 @@ public class GuerreroComportamiento : MonoBehaviour
     private GameObject target;
     private Animator animator;
 
-    private int id;
     private float vida = 100f;
     private float ataque = 10f;
     private float velocidadAtaque = 0.80f;
@@ -112,12 +111,6 @@ public class GuerreroComportamiento : MonoBehaviour
             combatiendo = true;
             timeControlCarga = 0f;
         }
-    }
-
-    public int Id
-    {
-        get { return id; }
-        set { id = value; }
     }
     public bool EnFormacion
     {
