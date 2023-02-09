@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DiablilloComportamiento : MonoBehaviour
 {
-    private Rigidbody2D rb;
     private GameObject target;
     private Animator animator;
+    private DiablilloComportamiento dc;
 
     private float vida = 100f;
     private float ataque = 10f;
@@ -18,7 +18,6 @@ public class DiablilloComportamiento : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
     }
 

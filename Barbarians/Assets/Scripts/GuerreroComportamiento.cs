@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GuerreroComportamiento : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private GameObject target;
+
     private Animator animator;
+
+    private GameObject target;
 
     private float vida = 100f;
     private float ataque = 10f;
@@ -18,14 +20,11 @@ public class GuerreroComportamiento : MonoBehaviour
     private bool enFormacion = false;
     private float timeControl = 0f;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();
         animator= this.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
 
