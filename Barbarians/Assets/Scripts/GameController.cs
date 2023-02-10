@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 {
     
     private static Dictionary<string,FormationController> fcmap  = new();
-    private float timeControl = 0f;
+    
     private float countDown = 3f;
     
     private bool mapsOnce = true;

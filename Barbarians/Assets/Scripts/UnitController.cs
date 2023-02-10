@@ -6,7 +6,11 @@ public class UnitController : MonoBehaviour
 {
 
     private int id;
-    [SerializeField]private string unitType;
+    [SerializeField] private string unitType;
+    [SerializeField] private float vida;
+    [SerializeField] private float ataque;
+    [SerializeField] private float velocidadAtaque;
+    [SerializeField] private float velocidadMovimiento;
 
     private bool inController = false;
     private bool controllerOnce = true;
@@ -29,6 +33,10 @@ public class UnitController : MonoBehaviour
         {
             SetBehaviours(true);
             bhOnce= false;
+        }
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
     public void SetBehaviours(bool boolean)
@@ -60,5 +68,25 @@ public class UnitController : MonoBehaviour
     {
         get { return inController; }
         set { inController = value; }
+    }
+    public float Vida
+    {
+        get { return vida; }
+        set { vida = value; }
+    }
+    public float Ataque
+    {
+        get { return ataque; }
+        set { ataque = value; }
+    }
+    public float VelocidadAtaque
+    {
+        get { return velocidadAtaque; }
+        set { velocidadAtaque = value; }
+    }
+    public float VelocidadMovimiento
+    {
+        get { return velocidadMovimiento; }
+        set { velocidadMovimiento = value; }
     }
 }

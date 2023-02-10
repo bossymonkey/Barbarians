@@ -159,6 +159,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitType: guerrero
+  vida: 100
+  ataque: 10
+  velocidadAtaque: 1.2
+  velocidadMovimiento: 1
 --- !u!114 &2143967416203953624
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DiablilloComportamiento : MonoBehaviour
 {
     private GameObject target;
     private Animator animator;
-    private DiablilloComportamiento dc;
+    private UnitController uc;
 
-    private float vida = 100f;
-    private float ataque = 10f;
-    private float velocidadAtaque = 0.80f;
-    private float velocidadMovimiento = 1.5f;
     private bool combatiendo = false;
     private float timeControlAtaque = 0f;
     
@@ -19,12 +16,14 @@ public class DiablilloComportamiento : MonoBehaviour
     void Start()
     {
         animator = this.GetComponent<Animator>();
+        uc = this.GetComponent<UnitController>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         target = EncontrarObjetivo();
+
         if(!combatiendo && HayEnemigoCerca(target))
         {
             Cargar();
@@ -32,7 +31,7 @@ public class DiablilloComportamiento : MonoBehaviour
         else if(combatiendo)
         {
             timeControlAtaque += Time.deltaTime;
-            if (timeControlAtaque >= velocidadAtaque)
+            if (timeControlAtaque >= uc.VelocidadAtaque)
             {
                 Atacar();
             }
@@ -63,12 +62,12 @@ public class DiablilloComportamiento : MonoBehaviour
     }
     private void Avanzar()
     {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 1, transform.position.y,transform.position.z), velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 1, transform.position.y,transform.position.z), uc.VelocidadMovimiento * Time.deltaTime);
         animator.SetBool("avanzando", true);
     }
     private void Cargar()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, uc.VelocidadMovimiento * Time.deltaTime);
         animator.SetBool("avanzando", true);
     }
     private void Atacar()
@@ -78,6 +77,7 @@ public class DiablilloComportamiento : MonoBehaviour
     }
     private void FinAtaque()
     {
+        target.GetComponent<UnitController>().Vida -= uc.Ataque;
         timeControlAtaque = 0f;
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -85,6 +85,11 @@ public class DiablilloComportamiento : MonoBehaviour
         if (collision.gameObject.CompareTag("barbarian"))
         {
             combatiendo = true;
+            target = collision.gameObject;
         }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        combatiendo = false;
     }
 }
