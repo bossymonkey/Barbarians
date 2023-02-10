@@ -163,6 +163,7 @@ MonoBehaviour:
   ataque: 10
   velocidadAtaque: 1.2
   velocidadMovimiento: 1
+  isDefensive: 1
 --- !u!114 &2143967416203953624
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -175,3 +175,4 @@ MonoBehaviour:
   ataque: 5
   velocidadAtaque: 0.8
   velocidadMovimiento: 1.5
+  isDefensive: 0

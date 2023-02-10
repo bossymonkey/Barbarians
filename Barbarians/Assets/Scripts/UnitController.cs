@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class UnitController : MonoBehaviour
 {
+    private GameObject target;
 
     private int id;
     [SerializeField] private string unitType;
@@ -11,6 +13,8 @@ public class UnitController : MonoBehaviour
     [SerializeField] private float ataque;
     [SerializeField] private float velocidadAtaque;
     [SerializeField] private float velocidadMovimiento;
+
+    private float timeControlAtaque = 0f;
 
     private bool inController = false;
     private bool controllerOnce = true;
@@ -38,6 +42,48 @@ public class UnitController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    public GameObject EncontrarObjetivo(string tag)
+    {
+        return GameObject.FindGameObjectWithTag(tag);
+    }
+
+    public bool HayEnemigoCerca(GameObject target)
+    {
+        if (Vector2.Distance(transform.position, target.transform.position) < 4f || this.transform.position.x-target.transform.position.x < 2f)
+            return true;
+        else return false;
+    }
+    public void Avanzar()
+    {
+        if (this.gameObject.CompareTag("barbarian"))
+        {
+            transform.position += Vector3.right * Time.deltaTime;
+        }
+        else transform.position += Vector3.left * Time.deltaTime;   
+    }
+    public void Cargar()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, velocidadMovimiento * Time.deltaTime);
+    }
+
+    public void Atacar()
+    {
+        
+    }
+    public void Esperar()
+    {
+        transform.position += Vector3.zero * Time.deltaTime;
+    }
+    public void Defender()
+    {
+        transform.position += Vector3.zero * Time.deltaTime;
+    }
+
+    public void FinAtaque()
+    {
+        target.GetComponent<UnitController>().Vida -= ataque;
+        timeControlAtaque = 0f;
     }
     public void SetBehaviours(bool boolean)
     {
@@ -88,5 +134,15 @@ public class UnitController : MonoBehaviour
     {
         get { return velocidadMovimiento; }
         set { velocidadMovimiento = value; }
+    }
+    public GameObject Target
+    {
+        get { return target; }
+        set { target = value; }
+    }
+    public float TimeControlAtaque
+    {
+        get { return timeControlAtaque; }
+        set { timeControlAtaque = value; }
     }
 }

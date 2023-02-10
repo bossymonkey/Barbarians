@@ -5,101 +5,60 @@ using UnityEngine;
 
 public class GuerreroComportamiento : MonoBehaviour
 {
-
-    private Animator animator;
-    private GameObject target;
     private UnitController uc;
+    private Animator animator;
 
     private bool combatiendo = false;
     private float timeControlCarga = 0f;
-    private float timeControlAtaque= 0f;
     private bool enFormacion = false;
 
     private void Start()
     {
-        animator= this.GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
+        uc = this.GetComponent<UnitController>();
     }
 
     private void FixedUpdate()
     {
-
-        target = EncontrarObjetivo();
-
-        if (!combatiendo && HayEnemigoCerca(target))
+        if (!combatiendo)
+        {
+            uc.Target = uc.EncontrarObjetivo("demon");
+        }
+        if (!combatiendo && uc.HayEnemigoCerca(uc.Target))
         {
             timeControlCarga += Time.deltaTime;
             if (timeControlCarga >= 3f) 
             {
-                Cargar();
+                uc.Cargar();
+                animator.SetTrigger("avanzando");
             }
             else
             {
-                Defender();
+                uc.Defender();
+                animator.SetTrigger("defendiendo");
             }
         }
         else if(combatiendo)
         {
-            timeControlAtaque += Time.deltaTime;
-            if(timeControlAtaque >= uc.VelocidadAtaque)
+            uc.TimeControlAtaque += Time.deltaTime;
+            if(uc.TimeControlAtaque >= uc.VelocidadAtaque)
             {
-                Atacar();
+                uc.Atacar();
+                animator.SetTrigger("atacando");
             }
             else
             {
-                Defender();
+                uc.Defender();
+                animator.SetTrigger("defendiendo");
             }
         }
         else if(!enFormacion)
         {
-            Avanzar();
+            uc.Avanzar();
+            animator.SetTrigger("avanzando");
         }
     }
-
-    private GameObject EncontrarObjetivo()
-    {
-        return GameObject.FindGameObjectWithTag("demon");
-    }
-
-    private bool HayEnemigoCerca(GameObject target)
-    {
-        if (Vector2.Distance(transform.position, target.transform.position) < 4f)
-            return true;
-        else return false;
-    }
-
-    private void Avanzar()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x + 1, transform.position.y,transform.position.z), uc.VelocidadMovimiento * Time.deltaTime);
-        animator.SetBool("avanzando", true);
-    }
-    private void Cargar()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, uc.VelocidadMovimiento * Time.deltaTime);
-        animator.SetBool("defendiendo", false);
-        animator.SetBool("avanzando", true);
-    }
-    
-    private void Atacar()
-    {
-        animator.SetBool("defendiendo", false);
-        animator.SetBool("atacando", true);
-    }
-
-    private void Defender()
-    {
-        transform.position = new Vector3(transform.position.x, transform.position.y,transform.position.z);
-        animator.SetBool("avanzando", false);
-        animator.SetBool("atacando", false);
-        animator.SetBool("defendiendo", true);
-    }
-
-    private void FinAtaque()
-    {
-        target.GetComponent<UnitController>().Vida -= uc.Ataque;
-        timeControlAtaque = 0f;
-    }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("demon"))
         {
@@ -107,12 +66,8 @@ public class GuerreroComportamiento : MonoBehaviour
             timeControlCarga = 0f;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         combatiendo = false;
-    }
-    public bool EnFormacion
-    {
-        get;set;
     }
 }
