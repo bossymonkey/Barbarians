@@ -5,6 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class UnitController : MonoBehaviour
 {
+    public static UnitController Instance { get; private set; }
     private GameObject target;
 
     private int id;

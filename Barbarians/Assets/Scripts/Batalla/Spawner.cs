@@ -19,8 +19,6 @@ public class Spawner : MonoBehaviour
 
     private static bool ready = false;
 
-
-
     void Start()
     {
         SpawnUnits(guerreroObject, guerrerosNum, pool[0], pool[1], pool[2], pool[3]);
