@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 2143967416203953629}
   - component: {fileID: 2143967416203953628}
   - component: {fileID: 2143967416203953625}
-  - component: {fileID: -2676339610131571375}
-  - component: {fileID: 2143967416203953624}
   m_Layer: 0
   m_Name: Guerrero
   m_TagString: barbarian
@@ -146,33 +144,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &-2676339610131571375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b14a942712d1164cbfd399710a8090d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitType: guerrero
-  vida: 100
-  ataque: 10
-  velocidadAtaque: 1.2
-  velocidadMovimiento: 1
-  isDefensive: 1
---- !u!114 &2143967416203953624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33074b2f43f79c458443289c47a41c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitBattleController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> barbarians;
-    [SerializeField] private List<GameObject> demons;
+    public Dictionary<string, List<GameObject>> barbarians = new();
+    public Dictionary<string, List<GameObject>> demons = new();
 
     public static UnitBattleController Instance { get; private set; }
 
@@ -19,10 +19,7 @@ public class UnitBattleController : MonoBehaviour
         {
             Instance = this;
         }
+        demons.Add("Diablillo", new List<GameObject>());
+        barbarians.Add("Guerrero", new List<GameObject>());
     }
-
-    public List<GameObject> GetBarbarians() { return barbarians; }
-    
-    public List<GameObject> GetDemons() { return demons; }
-
 }

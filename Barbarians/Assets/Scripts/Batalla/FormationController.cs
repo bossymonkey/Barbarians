@@ -1,15 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
 
-public class FormationController
+public class FormationController : MonoBehaviour
 {
-    private List<GameObject> objetosAFormar = new();
-    private List<Vector3> posiciones = new();
+    public static FormationController Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
-    public void GetIds()
+    public void GetIds(List<GameObject> objetosAFormar)
     {
         foreach (GameObject go in objetosAFormar)
         {
@@ -44,7 +53,7 @@ public class FormationController
         }
         return new Vector3((xmax + xmin) / 2, (ymax + ymin) / 2, (ymax + ymin) / 2);
     }
-    public void PlaceUnitsFormation(Vector3 midPoint)
+    public void PlaceUnitsFormation(Vector3 midPoint, List<GameObject> objetosAFormar)
     {
         float posx = 0f;
         float posy = 8f;
@@ -61,7 +70,7 @@ public class FormationController
             }
         }
     }
-    public void PlaceWithoutFormation(Vector3 midPoint)
+    public void PlaceWithoutFormation(Vector3 midPoint, List<GameObject> objetosAFormar)
     {
         float yDiff = 8f;
         float xBack = 10f;
@@ -73,7 +82,7 @@ public class FormationController
             go.transform.position = new Vector3(Random.Range(midPoint.x, midPoint.x + xBack), ypos, ypos);
         }
     }
-    public List<Vector3> GetPositions(Vector3 midPoint)
+    public List<Vector3> GetPositions(Vector3 midPoint, List<GameObject> objetosAFormar)
     {
         List<Vector3> posiciones = new();
         Vector3 targetVector;
@@ -91,19 +100,9 @@ public class FormationController
                 posx -= 1f;
                 posy = 8f;
             }
-            //Debug.Log(targetVector);
         }
 
         return posiciones;
     }
-    public List<GameObject> ObjetosAFormar
-    {
-        get { return objetosAFormar; }
-        set { objetosAFormar = value; }
-    }
-    public List<Vector3> Posiciones
-    {
-        get { return posiciones; }
-        set { posiciones = value; }
-    }
+
 }

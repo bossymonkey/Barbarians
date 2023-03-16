@@ -7,6 +7,8 @@ public class BattleController : MonoBehaviour
 {
     public static BattleController Instance { get; private set; }
 
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
