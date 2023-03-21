@@ -13,6 +13,13 @@ GameObject:
   - component: {fileID: 2143967416203953629}
   - component: {fileID: 2143967416203953628}
   - component: {fileID: 2143967416203953625}
+  - component: {fileID: 3394482283183305966}
+  - component: {fileID: 8120249536931824308}
+  - component: {fileID: 6502626953755376950}
+  - component: {fileID: 3730930542979629172}
+  - component: {fileID: 211133315106543601}
+  - component: {fileID: 7106016945095639236}
+  - component: {fileID: 1293394189072975376}
   m_Layer: 0
   m_Name: Guerrero
   m_TagString: barbarian
@@ -144,3 +151,97 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &3394482283183305966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7bf37bc1c1d184491ead2014800b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  maxHealth: 120
+  attackSpeed: 1.2
+  damage: 15
+  armor: 3
+--- !u!114 &8120249536931824308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4734c92bdbed9e8478b8f61cb2380042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defend: {fileID: 7106016945095639236}
+  attack: {fileID: 3730930542979629172}
+  advance: {fileID: 6502626953755376950}
+  charge: {fileID: 211133315106543601}
+--- !u!114 &6502626953755376950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d27e23b5ecb5440a9b4d7fd4810e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3730930542979629172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064cc2005ea1adc419854e600de8bf40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &211133315106543601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce585d42d8dfcc4a8b0237ec4bc3206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7106016945095639236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c8822875751f54a90e0180e9d21ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1293394189072975376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143967416203953571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ada9254dfd29d4fadaf3b813a4d820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
