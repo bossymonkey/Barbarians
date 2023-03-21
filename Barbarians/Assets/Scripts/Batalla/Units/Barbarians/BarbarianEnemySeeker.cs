@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class BarbarianEnemySeeker : MonoBehaviour
 {
-    private GameObject target;
+    [SerializeField]private GameObject target;
     private bool gotTarget = false;
     [SerializeField] private float range;
 
     private void Update()
     {
-        if (target == null)
+        if (Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("demon")) == null)
         {
             gotTarget= false;
-            target = Physics2D.OverlapCircle(transform.position, range).gameObject;
         }
         else
         {
-            gotTarget= true;
+            gotTarget = true;
+            target = Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("demon")).gameObject;
+            Debug.Log("target: "+target.name);
         }
     }
     public GameObject Target

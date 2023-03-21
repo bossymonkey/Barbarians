@@ -20,10 +20,18 @@ public class StartSceneRoutine : MonoBehaviour
         foreach (List<GameObject> li in UnitBattleController.Instance.barbarians.Values) 
         {
             FormationController.Instance.PlaceUnitsFormation(new Vector3(-30, -10, 0), li);
+            foreach (GameObject go in li)
+            {
+                go.SetActive(true);
+            }
         }
         foreach (List<GameObject> li in UnitBattleController.Instance.demons.Values)
         {
             FormationController.Instance.PlaceWithoutFormation(new Vector3(30, -10, 0), li);
+            foreach (GameObject go in li)
+            {
+                go.SetActive(true);
+            }
         }
         yield return new WaitForSeconds(1f);
         StopAllCoroutines();
