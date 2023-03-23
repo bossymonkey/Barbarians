@@ -15,12 +15,12 @@ public class WarriorDefenceState : MonoBehaviour
     private void OnEnable()
     {
         time = 0f;
-        Stop();
+        //Stop();
     }
     private void Update()
     {
         time += Time.deltaTime;
-        if (w.targeter.GotTarget && time>5f)
+        if (w.targeter.GotTarget && time<5f)
         {
             Defend();
         }

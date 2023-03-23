@@ -12,13 +12,14 @@ public class BarbarianEnemySeeker : MonoBehaviour
     {
         if (Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("demon")) == null)
         {
+            target = null;
             gotTarget= false;
         }
-        else
+        else if (target== null)
         {
             gotTarget = true;
             target = Physics2D.OverlapCircle(transform.position, range, LayerMask.GetMask("demon")).gameObject;
-            Debug.Log("target: "+target.name);
+            Debug.Log("target: "+target.transform.position);
         }
     }
     public GameObject Target

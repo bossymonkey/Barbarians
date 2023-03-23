@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 211133315106543601}
   - component: {fileID: 7106016945095639236}
   - component: {fileID: 1293394189072975376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Guerrero
   m_TagString: barbarian
   m_Icon: {fileID: 0}
@@ -244,4 +244,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ada9254dfd29d4fadaf3b813a4d820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  target: {fileID: 0}
+  range: 20
