@@ -15,28 +15,26 @@ public class WarriorDefenceState : MonoBehaviour
     private void OnEnable()
     {
         time = 0f;
-        Stop();
+        w.StopTranslate();
+        w.StopMovingTowards();
     }
     private void Update()
     {
-        time += Time.deltaTime;
-        if (w.targeter.GotTarget && time<5f)
+        if(w.targeter.Target != null)
         {
+            time += Time.deltaTime;
             Defend();
-        }
-        else if(!w.targeter.GotTarget) 
-        {
-            w.sm.ActivateState(w.sm.advance);
+            if (time >= 5f)
+            {
+                w.ArmorBonus = 0;
+                w.sm.ActivateState(w.sm.charge);
+            }
         }
         else
         {
-            w.sm.ActivateState(w.sm.charge);
+            w.sm.ActivateState(w.sm.advance);
         }
-    }
-    private void Stop()
-    {
-        transform.Translate(0, 0, 0);
-        w.anim.SetTrigger("quieto");
+
     }
     private void Defend()
     {
@@ -47,6 +45,8 @@ public class WarriorDefenceState : MonoBehaviour
     {
         if (col.gameObject.CompareTag("demon"))
         {
+            w.anim.SetTrigger("quieto");
+            w.StopTranslate();
             w.sm.ActivateState(w.sm.attack);
         }
     }

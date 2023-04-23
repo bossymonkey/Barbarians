@@ -18,6 +18,8 @@ public class Warrior : Unit
         anim = GetComponent<Animator>();
     }
 
+
+
     public float ArmorBonus
     {
         get { return armorBonus; }

@@ -14,13 +14,13 @@ public class WarriorAdvanceState : MonoBehaviour
     }
     private void Update()
     {
-        if (!w.targeter.GotTarget)
+        if (w.targeter.Target == null)
         {
             Advance();
         }
         else
         {
-            w.sm.ActivateState(w.sm.defend);
+            w.sm.ActivateState(w.sm.charge);
         }
     }
     private void Advance()
@@ -32,6 +32,8 @@ public class WarriorAdvanceState : MonoBehaviour
     {
         if (col.gameObject.CompareTag("demon"))
         {
+            w.anim.SetTrigger("quieto");
+            w.StopTranslate();
             w.sm.ActivateState(w.sm.attack);
         }
     }

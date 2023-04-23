@@ -12,7 +12,7 @@ public class WarriorChargeState : MonoBehaviour
     }
     private void Update()
     {
-        if (w.targeter.GotTarget)
+        if (w.targeter.Target != null)
         {
             Charge();
         }
@@ -30,6 +30,8 @@ public class WarriorChargeState : MonoBehaviour
     {
         if (col.gameObject.CompareTag("demon"))
         {
+            w.anim.SetTrigger("quieto");
+            w.StopMovingTowards();
             w.sm.ActivateState(w.sm.attack);
         }
     }

@@ -15,7 +15,7 @@ public class WarriorAttackState : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime; 
-        if (!w.targeter.GotTarget)
+        if (w.targeter.Target == null)
         {
             w.sm.ActivateState(w.sm.advance);
         }
@@ -29,7 +29,7 @@ public class WarriorAttackState : MonoBehaviour
                 Attack(w.targeter.Target);
             }
         }
-        else
+        else if(col.gameObject.CompareTag("demon"))
         {
             w.targeter.Target = col.gameObject;
         }

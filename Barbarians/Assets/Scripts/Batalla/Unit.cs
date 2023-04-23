@@ -16,6 +16,15 @@ public class Unit : MonoBehaviour
     {
         health = maxHealth;
     }
+
+    public void StopTranslate()
+    {
+        transform.Translate(0, 0, 0);
+    }
+    public void StopMovingTowards()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+    }
     public float Health
     {
         get { return health; }
