@@ -23,7 +23,7 @@ public class WarriorChargeState : MonoBehaviour
     }
     private void Charge()
     {
-        transform.position = Vector3.MoveTowards(transform.position, w.targeter.Target.transform.position, w.Speed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, w.targeter.Target.transform.position, (w.Speed+0.5f)*Time.deltaTime);
         w.anim.SetTrigger("avanzando");
     }
     private void OnCollisionEnter2D(Collision2D col)

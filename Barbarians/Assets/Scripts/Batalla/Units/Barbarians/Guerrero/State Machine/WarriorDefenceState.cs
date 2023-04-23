@@ -15,7 +15,7 @@ public class WarriorDefenceState : MonoBehaviour
     private void OnEnable()
     {
         time = 0f;
-        //Stop();
+        Stop();
     }
     private void Update()
     {
