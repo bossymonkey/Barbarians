@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class TileController : MonoBehaviour
 {
-    List<GameObject> tiles;
+    //List<GameObject> tiles;
+    private GameObject[,] tiles = new GameObject[MAXTILESX, MAXTILESY]; 
     [SerializeField]private GameObject tileobject;
     private const int MAXTILESX = 90;
     private const int MAXTILESY = 30;
     private Vector3 initPos = new Vector3(-45f,2f,-9f);
     private Vector3 actualPos;
-    private TileScript tileScript;
 
     private void Start()
     {
         InstanceTiles();
+        Spawn();
     }
     private void InstanceTiles()
     {
@@ -26,9 +27,21 @@ public class TileController : MonoBehaviour
             {
                 actualPos = new Vector3(initPos.x + i, initPos.y - j, initPos.z);
                 instanceUnit = Instantiate(tileobject, actualPos, Quaternion.identity);
-                tileScript = instanceUnit.GetComponent<TileScript>();
-                tileScript.Tileposx = i;
-                tileScript.Tileposy = j;
+                instanceUnit.GetComponent<TileScript>().Tileposx = i;
+                instanceUnit.GetComponent<TileScript>().Tileposy = j;
+                instanceUnit.GetComponent<TileScript>().enabled = false;
+                tiles[i, j] = instanceUnit;
+            }
+        }
+    }
+    private void Spawn()
+    {
+        for(int i = 0; i < 2; i++)
+        {
+            for(int j = 0;j < MAXTILESY; j++)
+            {
+                tiles[i, j].GetComponent<TileScript>().Unit = tiles[i, j].GetComponent<TileScript>().Warrior;
+                tiles[i, j].GetComponent<TileScript>().enabled = true;
             }
         }
     }

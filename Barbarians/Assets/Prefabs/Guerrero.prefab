@@ -10,16 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2143967416203953631}
   - component: {fileID: 2143967416203953630}
-  - component: {fileID: 2143967416203953629}
-  - component: {fileID: 2143967416203953628}
   - component: {fileID: 2143967416203953625}
   - component: {fileID: 3394482283183305966}
-  - component: {fileID: 8120249536931824308}
-  - component: {fileID: 6502626953755376950}
-  - component: {fileID: 3730930542979629172}
-  - component: {fileID: 211133315106543601}
-  - component: {fileID: 7106016945095639236}
-  - component: {fileID: 1293394189072975376}
   m_Layer: 6
   m_Name: Guerrero
   m_TagString: barbarian
@@ -94,43 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &2143967416203953629
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.21554309, y: 0.13771588}
-  m_Size: {x: 0.40326178, y: 0.64886343}
-  m_Direction: 0
---- !u!50 &2143967416203953628
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!95 &2143967416203953625
 Animator:
   serializedVersion: 5
@@ -169,80 +124,3 @@ MonoBehaviour:
   attackSpeed: 1.2
   damage: 15
   armor: 3
---- !u!114 &8120249536931824308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4734c92bdbed9e8478b8f61cb2380042, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defend: {fileID: 7106016945095639236}
-  attack: {fileID: 3730930542979629172}
-  advance: {fileID: 6502626953755376950}
-  charge: {fileID: 211133315106543601}
---- !u!114 &6502626953755376950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d27e23b5ecb5440a9b4d7fd4810e96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3730930542979629172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064cc2005ea1adc419854e600de8bf40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &211133315106543601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce585d42d8dfcc4a8b0237ec4bc3206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7106016945095639236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9c8822875751f54a90e0180e9d21ec3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1293394189072975376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143967416203953571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ada9254dfd29d4fadaf3b813a4d820, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 20
