@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class TileController : MonoBehaviour
 {
-    //List<GameObject> tiles;
+
     private GameObject[,] tiles = new GameObject[MAXTILESX, MAXTILESY]; 
     [SerializeField]private GameObject tileobject;
-    private const int MAXTILESX = 90;
-    private const int MAXTILESY = 30;
+    public const int MAXTILESX = 90;
+    public const int MAXTILESY = 30;
     private Vector3 initPos = new Vector3(-45f,2f,-9f);
     private Vector3 actualPos;
 
-    private void Start()
-    {
-        InstanceTiles();
-        Spawn();
-    }
-    private void InstanceTiles()
+    public void InstanceTiles()
     {
         GameObject instanceUnit;
 
@@ -34,15 +29,9 @@ public class TileController : MonoBehaviour
             }
         }
     }
-    private void Spawn()
+    public GameObject[,] Tiles 
     {
-        for(int i = 0; i < 2; i++)
-        {
-            for(int j = 0;j < MAXTILESY; j++)
-            {
-                tiles[i, j].GetComponent<TileScript>().Unit = tiles[i, j].GetComponent<TileScript>().Warrior;
-                tiles[i, j].GetComponent<TileScript>().enabled = true;
-            }
-        }
+        get { return tiles; }
+        set { tiles = value; }
     }
 }

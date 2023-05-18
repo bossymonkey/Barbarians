@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour
 {
-    [SerializeField] private GameObject warrior;
     private GameObject unit;
     private int tileposx;
     private int tileposy;
@@ -18,11 +17,7 @@ public class TileScript : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (unit == null)
-        {
-            Destroy(unit);
-        }
-        unit = null;
+        
     }
     private void Update()
     {
@@ -42,10 +37,5 @@ public class TileScript : MonoBehaviour
     {
         get { return unit; }
         set { unit = value; }
-    }
-    public GameObject Warrior
-    {
-        get { return warrior; }
-        set { warrior = value; }
     }
 }
