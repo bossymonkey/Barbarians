@@ -5,14 +5,26 @@ using UnityEngine;
 
 public class BattleController : MonoBehaviour
 {
-    private List<GameObject> demonTiles;
-    private List<GameObject> humanTiles;
-    //true -> humanos, false -> demonios
-    private bool turn;
+    private List<GameObject> demonTiles = new();
+    private List<GameObject> humanTiles = new();
     [SerializeField] private GameObject warrior;
     [SerializeField] private int warriorCount;
     [SerializeField] private GameObject imp;
     [SerializeField] private int impCount;
+
+    public static BattleController instance;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     public GameObject Warrior
     {
@@ -33,5 +45,15 @@ public class BattleController : MonoBehaviour
     {
         get { return impCount; }
         set { impCount = value; }
+    }
+    public List<GameObject> DemonTiles
+    {
+        get { return demonTiles; }
+        set { demonTiles = value; }
+    }
+    public List<GameObject> HumanTiles
+    {
+        get { return humanTiles; }
+        set { humanTiles = value; }
     }
 }

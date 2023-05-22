@@ -316,7 +316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423970535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: 2, z: -9}
+  m_LocalPosition: {x: 0, y: 20, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -335,8 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6b936f836f98743b11c7561203fdd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  battleController: {fileID: 1925251812}
-  tileController: {fileID: 1895954527}
 --- !u!1 &1895954526
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warrior: {fileID: 2143967416203953571, guid: 2c0afbc2eebe47c4da0b4da7c63f181a, type: 3}
-  warriorCount: 100
+  warriorCount: 5
   imp: {fileID: 6941533090287250282, guid: 38c9e664c03915b48a076a22b152f008, type: 3}
-  impCount: 100
+  impCount: 5

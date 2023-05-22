@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,14 @@ public class Unit : MonoBehaviour
     [SerializeField] private readonly string unitType;
     [SerializeField] private float speed;
     [SerializeField] private float maxHealth;
-    [SerializeField] private float attackSpeed;
     [SerializeField] private float damage;
     [SerializeField] private float armor;
+    KeyValuePair<int, int> TilePosition;
 
     public void Start()
     {
         health = maxHealth;
     }
-
     public void StopTranslate()
     {
         transform.Translate(0, 0, 0);
@@ -34,11 +34,6 @@ public class Unit : MonoBehaviour
     {
         get { return speed; }
         set { speed = value; }
-    }
-    public float AttackSpeed
-    {
-        get { return attackSpeed; }
-        set { attackSpeed = value; }
     }
     public float Damage
     {

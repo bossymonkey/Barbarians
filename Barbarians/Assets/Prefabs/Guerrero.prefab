@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2143967416203953631}
   - component: {fileID: 2143967416203953630}
   - component: {fileID: 2143967416203953625}
-  - component: {fileID: 3394482283183305966}
+  - component: {fileID: 8141677059313369208}
   m_Layer: 6
   m_Name: Guerrero
   m_TagString: barbarian
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3394482283183305966
+--- !u!114 &8141677059313369208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,6 +121,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   maxHealth: 120
-  attackSpeed: 1.2
-  damage: 15
-  armor: 3
+  damage: 10
+  armor: 5

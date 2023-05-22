@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6941533090287250278}
   - component: {fileID: 6941533090287250279}
   - component: {fileID: 6941533090287250276}
+  - component: {fileID: 6486307560681190574}
   m_Layer: 3
   m_Name: Diablillo
   m_TagString: demon
@@ -106,3 +107,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6486307560681190574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6941533090287250282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1841ec491de9e94419469220ab3276c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  maxHealth: 70
+  damage: 5
+  armor: 3

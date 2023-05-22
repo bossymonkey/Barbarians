@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,19 @@ public class TileController : MonoBehaviour
     public const int MAXTILESY = 30;
     private Vector3 initPos = new Vector3(-45f,2f,-9f);
     private Vector3 actualPos;
+    public static TileController instance;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
     public void InstanceTiles()
     {
         GameObject instanceUnit;
