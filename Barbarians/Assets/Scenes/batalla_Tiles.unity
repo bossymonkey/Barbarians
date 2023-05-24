@@ -425,6 +425,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warrior: {fileID: 2143967416203953571, guid: 2c0afbc2eebe47c4da0b4da7c63f181a, type: 3}
-  warriorCount: 150
+  warriorCount: 20
   imp: {fileID: 6941533090287250282, guid: 38c9e664c03915b48a076a22b152f008, type: 3}
-  impCount: 150
+  impCount: 20

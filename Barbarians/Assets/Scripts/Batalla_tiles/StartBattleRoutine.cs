@@ -28,13 +28,16 @@ public class StartBattleRoutine : MonoBehaviour
     }
     public void Spawn()
     {
+        GameObject instanceunit;
         for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < TileController.MAXTILESY; j++)
             {
                 if (BattleController.instance.WarriorCount > 0)
                 {
-                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = BattleController.instance.Warrior;
+                    instanceunit = Instantiate(BattleController.instance.Warrior) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
                     BattleController.instance.WarriorCount--;
                 }
@@ -47,7 +50,9 @@ public class StartBattleRoutine : MonoBehaviour
             {
                 if (BattleController.instance.ImpCount > 0)
                 {
-                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = BattleController.instance.Imp;
+                    instanceunit = Instantiate(BattleController.instance.Imp) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200,200,200);
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
                     BattleController.instance.ImpCount--;
                 }
