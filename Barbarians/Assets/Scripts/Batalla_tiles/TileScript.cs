@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TileScript : MonoBehaviour
@@ -58,17 +59,118 @@ public class TileScript : MonoBehaviour
     }
     public void Attack()
     {
-        Debug.Log(unit.name + "ha atacado a " + target.name);
+        Debug.Log("el target tiene "+ target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
+        int finaldmg;
+        finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
+        if(finaldmg < 1) {finaldmg = 1;}
+        if (unit.CompareTag("demon") && unit.name == "Diablillo")
+        {
+            //unit.GetComponent<Imp>().anim.SetTrigger("atacando");
+        }
+        else if (unit.CompareTag("barbarian") && unit.name == "Guerrero")
+        {
+            //unit.GetComponent<Warrior>().anim.SetTrigger("atacando");
+        }
+        Debug.Log(unit.name + "ha ataca a " + target.GetComponent<TileScript>().unit.name + " causando " + finaldmg + " de daño, y tiene " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + "de vida");
+        target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
+        Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
+        if(target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health < 1)
+        {
+            target.GetComponent<TileScript>().enabled = false;
+        }
+    }
+    private bool CheckEnemyInTile(KeyValuePair<int,int> position)
+    {
+        try
+        {
+            if (TileController.instance.Tiles[tileposx + position.Key, Tileposy + position.Value].GetComponent<TileScript>().unit != null &&
+                    !TileController.instance.Tiles[tileposx + position.Key, Tileposy + position.Value].GetComponent<TileScript>().unit.CompareTag(unit.tag))
+            {
+                target = TileController.instance.Tiles[tileposx + position.Key, Tileposy + position.Value];
+                return true;
+            }
+            else return false;
+        }
+        catch
+        {
+            return false;
+        }
     }
     public bool CheckEnemyinRange()
     {
-        if (Chebyshev(new KeyValuePair<int, int>(
-                target.GetComponent<TileScript>().Tileposx, target.GetComponent<TileScript>().Tileposy),
-                new KeyValuePair<int, int>(tileposx, tileposy)) < 2)
+        if (Random.Range(0f, 1f) > 0.5f)
         {
-            return true;
+            if (CheckEnemyInTile(FORWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPFORWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPBACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(BACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNBACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNFORWARD))
+            {
+                return true;
+            }
+            else return false;
+
         }
-        else return false;
+        else
+        {
+            if (CheckEnemyInTile(FORWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNFORWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(DOWNBACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(BACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPBACKWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPWARD))
+            {
+                return true;
+            }
+            if (CheckEnemyInTile(UPFORWARD))
+            {
+                return true;
+            }
+            else return false;
+        }
     }
     public KeyValuePair<int,int> GetMove()
     {

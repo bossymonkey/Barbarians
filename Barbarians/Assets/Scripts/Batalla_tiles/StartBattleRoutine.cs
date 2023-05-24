@@ -62,13 +62,13 @@ public class StartBattleRoutine : MonoBehaviour
         foreach (GameObject human in BattleController.instance.HumanTiles.ToList())
         {
             Debug.Log(human.GetComponentInChildren<Unit>().name);
-            human.GetComponent<TileScript>().GetTarget(BattleController.instance.DemonTiles);
             if (human.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 human.GetComponent<TileScript>().Attack();
             }
             else
             {
+                human.GetComponent<TileScript>().GetTarget(BattleController.instance.DemonTiles);
                 human.GetComponent <TileScript>().MoveTo(human.GetComponent<TileScript>().GetMove());
             }
         }
@@ -81,13 +81,13 @@ public class StartBattleRoutine : MonoBehaviour
         foreach (GameObject demon in BattleController.instance.DemonTiles.ToList())
         {
             Debug.Log(demon.GetComponentInChildren<Unit>().name);
-            demon.GetComponent<TileScript>().GetTarget(BattleController.instance.HumanTiles);
             if (demon.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 demon.GetComponent<TileScript>().Attack();
             }
             else
             {
+                demon.GetComponent<TileScript>().GetTarget(BattleController.instance.HumanTiles);
                 demon.GetComponent<TileScript>().MoveTo(demon.GetComponent<TileScript>().GetMove());
             }
         }

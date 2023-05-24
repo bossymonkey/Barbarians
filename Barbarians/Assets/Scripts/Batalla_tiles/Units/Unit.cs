@@ -5,18 +5,12 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    private float health;
-    [SerializeField] private readonly string unitType;
-    [SerializeField] private float speed;
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float damage;
-    [SerializeField] private float armor;
-    KeyValuePair<int, int> TilePosition;
+    [SerializeField] private int health;
+    [SerializeField] private int speed;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int damage;
+    [SerializeField] private int armor;
 
-    public void Start()
-    {
-        health = maxHealth;
-    }
     public void StopTranslate()
     {
         transform.Translate(0, 0, 0);
@@ -25,22 +19,22 @@ public class Unit : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
-    public float Health
+    public int Health
     {
         get { return health; }
         set { health = value; }
     }
-    public float Speed
+    public int Speed
     {
         get { return speed; }
         set { speed = value; }
     }
-    public float Damage
+    public int Damage
     {
         get { return damage; }
         set { damage = value; }
     }
-    public float Armor
+    public int Armor
     {
         get { return armor; }
         set { armor = value; }
