@@ -21,9 +21,9 @@ public class StartBattleRoutine : MonoBehaviour
         while (true)
         {
             HumanTurn();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
             DemonTurn();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
     public void Spawn()
@@ -36,7 +36,6 @@ public class StartBattleRoutine : MonoBehaviour
                 {
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = BattleController.instance.Warrior;
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
-                    //BattleController.instance.HumanTiles.Add(TileController.instance.Tiles[i, j]);
                     BattleController.instance.WarriorCount--;
                 }
                 else break;
@@ -50,7 +49,6 @@ public class StartBattleRoutine : MonoBehaviour
                 {
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = BattleController.instance.Imp;
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
-                    //BattleController.instance.DemonTiles.Add(TileController.instance.Tiles[i, j]);
                     BattleController.instance.ImpCount--;
                 }
                 else break;
@@ -60,15 +58,10 @@ public class StartBattleRoutine : MonoBehaviour
     public void HumanTurn()
     {
         Debug.Log("empieza el turno de humanos");
-        Debug.Log("humancount " + BattleController.instance.HumanTiles.Count);
-        List<GameObject> humans = new();
-        foreach (GameObject human in BattleController.instance.HumanTiles)
+        //Debug.Log("humancount " + BattleController.instance.HumanTiles.Count);
+        foreach (GameObject human in BattleController.instance.HumanTiles.ToList())
         {
-            humans.Add(human);
-        }
-        foreach (GameObject human in humans)
-        {
-            //Debug.Log(human.GetComponentInChildren<Unit>().name);
+            Debug.Log(human.GetComponentInChildren<Unit>().name);
             human.GetComponent<TileScript>().GetTarget(BattleController.instance.DemonTiles);
             if (human.GetComponent<TileScript>().CheckEnemyinRange())
             {
@@ -84,15 +77,10 @@ public class StartBattleRoutine : MonoBehaviour
     public void DemonTurn()
     {
         Debug.Log("empieza el turno de demonios");
-        Debug.Log("demoncount " + BattleController.instance.DemonTiles.Count);
-        List<GameObject> demons = new(); 
-        foreach(GameObject demon in BattleController.instance.DemonTiles)
+        //Debug.Log("demoncount " + BattleController.instance.DemonTiles.Count);
+        foreach (GameObject demon in BattleController.instance.DemonTiles.ToList())
         {
-            demons.Add(demon);
-        }
-        foreach (GameObject demon in demons)
-        {
-            //Debug.Log(demon.GetComponentInChildren<Unit>().name);
+            Debug.Log(demon.GetComponentInChildren<Unit>().name);
             demon.GetComponent<TileScript>().GetTarget(BattleController.instance.HumanTiles);
             if (demon.GetComponent<TileScript>().CheckEnemyinRange())
             {

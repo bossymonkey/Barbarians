@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TileScript : MonoBehaviour
 {
-    private GameObject unit;
+    [SerializeField]private GameObject unit;
     [SerializeField]private int tileposx;
     [SerializeField]private int tileposy;
-    private GameObject target = null;
+    [SerializeField]private GameObject target = null;
     private readonly KeyValuePair<int, int> FORWARD = new KeyValuePair<int, int>(1, 0);
     private readonly KeyValuePair<int, int> BACKWARD = new KeyValuePair<int, int>(-1, 0);
     private readonly KeyValuePair<int, int> UPWARD = new KeyValuePair<int, int>(0, 1);
@@ -23,14 +23,17 @@ public class TileScript : MonoBehaviour
         GameObject instanceUnit = null;
         if (unit != null)
         {
-            instanceUnit = Instantiate(unit, transform.position, Quaternion.identity);
+            instanceUnit = Instantiate(unit,new Vector3(transform.position.x,transform.position.y,(transform.position.z-((float)tileposy/10))), Quaternion.identity);
             instanceUnit.transform.parent = gameObject.transform;
             if (instanceUnit.CompareTag("demon"))
             {
+                //Debug.Log("demonio a llegado a la casilla " + tileposx + "," + tileposy);
+
                 BattleController.instance.DemonTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
             }
             else if (instanceUnit.CompareTag("barbarian"))
             {
+                //Debug.Log("humano a llegado a la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
             }
         }
@@ -41,10 +44,12 @@ public class TileScript : MonoBehaviour
         {
             if (unit.CompareTag("demon"))
             {
+                //Debug.Log("demonio a abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.DemonTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
             }
             else if (unit.CompareTag("barbarian"))
             {
+                //Debug.Log("humano a abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
             }
             Destroy(gameObject.transform.GetChild(0).gameObject);
@@ -97,7 +102,6 @@ public class TileScript : MonoBehaviour
         {
             y = -1;
         }
-        Debug.Log("soy "+unit.name+" y me muevo: " + x + "," + y);
         return new KeyValuePair<int, int>(x, y);
     } 
     public void GetTarget(List<GameObject> enemies)
@@ -132,6 +136,7 @@ public class TileScript : MonoBehaviour
                 }
             }
         }
+        Debug.Log(unit.name + " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
     }
     public int Chebyshev(KeyValuePair<int, int> position1, KeyValuePair<int, int> position2)
     {
@@ -142,60 +147,126 @@ public class TileScript : MonoBehaviour
         KeyValuePair<int, int> _coords;
         if (CheckMove(coords))
         {
-            try
-            {
-                Move(coords);
-            }
-            catch { }
+            //Debug.Log("soy " + unit.name + " y me muevo: " + coords.Key + "," + coords.Value);
+            Move(coords);
         }
         else if (IsStraightMove(coords))
         {
             if(coords.Key == 0)
             {
-                _coords = new(coords.Key+1,coords.Value);
-                if (CheckMove(_coords))
+                if (Random.Range(0f, 1f) > 0.5f)
                 {
-                    Move(_coords);
+                    _coords = new(coords.Key + 1, coords.Value);
+                    if (CheckMove(_coords))
+                    {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                        Move(_coords);
+                    }
+                    else
+                    {
+                        _coords = new(coords.Key - 1, coords.Value);
+                        if (CheckMove(_coords))
+                        {
+                            //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                            Move(_coords);
+                        }
+                    }
                 }
                 else
                 {
-                    _coords = new(coords.Key - 1, coords.Value);
+                    _coords = new(coords.Key -1, coords.Value);
                     if (CheckMove(_coords))
                     {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
                         Move(_coords);
+                    }
+                    else
+                    {
+                        _coords = new(coords.Key +1, coords.Value);
+                        if (CheckMove(_coords))
+                        {
+                            //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                            Move(_coords);
+                        }
                     }
                 }
             }
             else
             {
-                _coords = new(coords.Key, coords.Value + 1);
-                if (CheckMove(_coords))
+                if (Random.Range(0f, 1f) > 0.5f)
                 {
-                    Move(_coords);
+                    _coords = new(coords.Key, coords.Value + 1);
+                    if (CheckMove(_coords))
+                    {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " +_coords.Key + "," + _coords.Value);
+                        Move(_coords);
+                    }
+                    else
+                    {
+                        _coords = new(coords.Key, coords.Value - 1);
+                        if (CheckMove(_coords))
+                        {
+                            //Debug.Log("soy " + unit.name + " y me muevo: " +_coords.Key + "," + _coords.Value);
+                            Move(_coords);
+                        }
+                    }
                 }
                 else
                 {
                     _coords = new(coords.Key, coords.Value - 1);
                     if (CheckMove(_coords))
                     {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " +_coords.Key + "," + _coords.Value);
                         Move(_coords);
+                    }
+                    else
+                    {
+                        _coords = new(coords.Key, coords.Value + 1);
+                        if (CheckMove(_coords))
+                        {
+                            //Debug.Log("soy " + unit.name + " y me muevo: " +_coords.Key + "," + _coords.Value);
+                            Move(_coords);
+                        }
                     }
                 }
             }
         }
         else
         {
-            _coords = new(0, coords.Value);
-            if (CheckMove(_coords))
+            if (Random.Range(0f, 1f) > 0.5f)
             {
-                Move(_coords);
+                _coords = new(0, coords.Value);
+                if (CheckMove(_coords))
+                {
+                    //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                    Move(_coords);
+                }
+                else
+                {
+                    _coords = new(coords.Key, 0);
+                    if (CheckMove(_coords))
+                    {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                        Move(_coords);
+                    }
+                }
             }
             else
             {
-                _coords = new(coords.Key,0);
+                _coords = new(coords.Key, 0);
                 if (CheckMove(_coords))
                 {
+                    //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
                     Move(_coords);
+                }
+                else
+                {
+                    _coords = new(0, coords.Value);
+                    if (CheckMove(_coords))
+                    {
+                        //Debug.Log("soy " + unit.name + " y me muevo: " + _coords.Key + "," + _coords.Value);
+                        Move(_coords);
+                    }
                 }
             }
         }
@@ -204,7 +275,7 @@ public class TileScript : MonoBehaviour
     {
         try
         {
-            if (TileController.instance.Tiles[coords.Key, coords.Value].GetComponent<TileScript>().enabled)
+            if (TileController.instance.Tiles[tileposx+coords.Key, tileposy+coords.Value].GetComponent<TileScript>().enabled)
             {
                 return false;
             }
@@ -232,7 +303,7 @@ public class TileScript : MonoBehaviour
     private void Move(KeyValuePair<int, int> coords)
     {
         
-        TileController.instance.Tiles[tileposx+coords.Key, tileposy+coords.Value].GetComponent<TileScript>().Unit = unit;
+        TileController.instance.Tiles[tileposx + coords.Key, tileposy + coords.Value].GetComponent<TileScript>().Unit = unit;
         TileController.instance.Tiles[tileposx + coords.Key, tileposy + coords.Value].GetComponent<TileScript>().enabled = true;
         gameObject.GetComponent<TileScript>().enabled = false;
     }
