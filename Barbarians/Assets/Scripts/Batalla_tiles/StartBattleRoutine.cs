@@ -41,6 +41,30 @@ public class StartBattleRoutine : MonoBehaviour
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
                     BattleController.instance.WarriorCount--;
                 }
+                else if(BattleController.instance.BerserkerCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Berserker) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.BerserkerCount--;
+                }
+                else if (BattleController.instance.KnightCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Knight) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.KnightCount--;
+                }
+                else if (BattleController.instance.VikingCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Viking) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.VikingCount--;
+                }
                 else break;
             }
         }
@@ -56,6 +80,30 @@ public class StartBattleRoutine : MonoBehaviour
                     TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
                     BattleController.instance.ImpCount--;
                 }
+                else if (BattleController.instance.EyeCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Eye) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.EyeCount--;
+                }
+                else if (BattleController.instance.WormCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Worm) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.WormCount--;
+                }
+                else if (BattleController.instance.DevilCount > 0)
+                {
+                    instanceunit = Instantiate(BattleController.instance.Devil) as GameObject;
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().Unit = instanceunit;
+                    instanceunit.transform.position = new Vector3(200, 200, 200);
+                    TileController.instance.Tiles[i, j].GetComponent<TileScript>().enabled = true;
+                    BattleController.instance.DevilCount--;
+                }
                 else break;
             }
         }
@@ -66,7 +114,7 @@ public class StartBattleRoutine : MonoBehaviour
         //Debug.Log("humancount " + BattleController.instance.HumanTiles.Count);
         foreach (GameObject human in BattleController.instance.HumanTiles.ToList())
         {
-            Debug.Log(human.GetComponentInChildren<Unit>().name);
+            //Debug.Log(human.GetComponentInChildren<Unit>().name);
             if (human.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 human.GetComponent<TileScript>().Attack();

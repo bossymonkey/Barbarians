@@ -1,0 +1,1323 @@
+fileFormatVersion: 2
+guid: bd5c9a743ed2ab643959357a2d3c43aa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: demon-red_1_orig_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 648
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed0819c2cad93d42836b88e7b635309
+      internalID: 1147167215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 648
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e968120b6d466042be931651b104e2a
+      internalID: 747826940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_2
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 648
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02af0da7383a5be4786fff5e0a64cf54
+      internalID: 300019552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_3
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 648
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663770cd39b90fa4183febf92d99be19
+      internalID: 529074794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 649
+        width: 123
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307d20b8cb6c44a4ba2a7b7202812719
+      internalID: 1926662084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 649
+        width: 123
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2739c33f6fdb644ab7e5a20cd7289a2
+      internalID: 1503389720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_6
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 661
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9ea6c08a59461459db5756ba3a7994
+      internalID: 760721030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_7
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 661
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01cbbdb68831dc468d5c42bd397e7c5
+      internalID: 410211895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_8
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 661
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a5f8cb833fcad42a66f786b57124f4
+      internalID: -593290489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 520
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72246d5e01f963a4fbe84428c20e59c4
+      internalID: 1268670524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 520
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274ab55b71b6f414ba20a7eb1936ea72
+      internalID: -92227205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_11
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 520
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b67f24cf495b914b98742cc7d4b3cab
+      internalID: -1276178162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_12
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 520
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29549984c68700346b9897fa001545a5
+      internalID: 1962359960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 520
+        width: 124
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c75f20c32d76140a76a6d5a54c6247
+      internalID: 1275267531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_14
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 520
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca350f4a1e0cae9438987747638a7958
+      internalID: 433261636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_15
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 520
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1021376e76eb8459f4a1ed0f094345
+      internalID: -1685699406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_16
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 520
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb3b1704dee1494ea3b68d6e01e31f1
+      internalID: -1649406280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_17
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 520
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f749294401f6cd2449093d0a5294bd87
+      internalID: 1621916626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55355b79c8fed064f988f49bf04ae339
+      internalID: 110326369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_19
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93b84e00e114de4187a2b2ea8ff03f3
+      internalID: -201481357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_20
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df58cb14842a5ad4ab3790a49d45d3d3
+      internalID: 1203948770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_21
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 405
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475cf511452d713448dd6a3da3056a39
+      internalID: 1523149534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_22
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 387
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a109f760b30f314d8949e06cef5c6b4
+      internalID: 654722607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_23
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 392
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bdebefc1763bf43b9a3f10dcb41fb8
+      internalID: -262952835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_24
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135524117f073fe4ebf0e6495743523a
+      internalID: 1299588473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_25
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9ad12ed0a3bc943a6d3befbca3d771
+      internalID: 1208145917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_26
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 392
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252ac8bb64125fa46b0266038746024d
+      internalID: -85571526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_27
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 264
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93324b0da26552641a3c974c0e22ad82
+      internalID: 591532634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 264
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da57b1884e0a7f40a46ce2f49c613e7
+      internalID: -1739054056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_29
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 264
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc0a66e88e5c5e4fa6d401b53982720
+      internalID: 1862292172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_30
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 264
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be67aeb6785a900428148431b476bac4
+      internalID: -819247479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_31
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 264
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc0ca646e10a9948835af15da8100aa
+      internalID: -49295430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_32
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 264
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b496a3f6de95bbd4ca4b23fc3a50e295
+      internalID: -237969859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_33
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 264
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ecf4555f6f16d4d9953745733a4873
+      internalID: -157552640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_34
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 264
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5068c79314eed7f4f86af3f33867a7e8
+      internalID: 2020305088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_35
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 264
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094a3d9bbd357ed4ead2b93fecec51e2
+      internalID: -2054042653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_36
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 149
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1a1342904d69b48bda21cc08a6e295
+      internalID: -1876308837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_37
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 149
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a90eda9870e1873408740ca588c390bd
+      internalID: -1197145707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_38
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 149
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38f884c09f00f444857fbdd8be3757f
+      internalID: 1653542602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_39
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 136
+        width: 118
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e27879e30dfdc14fb3442c6d664ad35
+      internalID: -217695469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_40
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 149
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58000ebe99e164041aed26792c67a013
+      internalID: -1531052857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_41
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 149
+        width: 116
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3086b634ba9e224cb506f7f6430eeb5
+      internalID: -789251630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_42
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 136
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed607ef625378ec48a0879d53d698a2a
+      internalID: -1677611921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_43
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 136
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84661d7150a12ba46b6f9c5e2bc103b8
+      internalID: 329807041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_44
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 136
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74dcb34e7c3c2b4bbfab6bc31f997fb
+      internalID: 440826989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_45
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 8
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdfa7539faec7d94ba3550a6e7ddce56
+      internalID: -269142459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_46
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 8
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb00a7bf4d3cddf49a14747fe5fee388
+      internalID: -1096708848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_47
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 8
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07efbb216dce0340a42de8469350dc0
+      internalID: -1441282451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_48
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 8
+        width: 119
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afc618444a86dcf4987c93ccf91f2aac
+      internalID: 1761025460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_49
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 8
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c31f775d51616a478ab25b284e716df
+      internalID: -1712800199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_50
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 8
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c477b5d265b6146ad745554413f637
+      internalID: -2144561204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_51
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 8
+        width: 118
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e1fd8dd8dc88545a919442b210bbe2
+      internalID: 1041132425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_52
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 8
+        width: 118
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d794ef28f6b36b44e8de6c14baf78b40
+      internalID: 1542216027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-red_1_orig_53
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 8
+        width: 118
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da95f14fd7a68924d82c365c99c43f1f
+      internalID: -2061016052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      demon-red_1_orig_0: 1147167215
+      demon-red_1_orig_1: 747826940
+      demon-red_1_orig_10: -92227205
+      demon-red_1_orig_11: -1276178162
+      demon-red_1_orig_12: 1962359960
+      demon-red_1_orig_13: 1275267531
+      demon-red_1_orig_14: 433261636
+      demon-red_1_orig_15: -1685699406
+      demon-red_1_orig_16: -1649406280
+      demon-red_1_orig_17: 1621916626
+      demon-red_1_orig_18: 110326369
+      demon-red_1_orig_19: -201481357
+      demon-red_1_orig_2: 300019552
+      demon-red_1_orig_20: 1203948770
+      demon-red_1_orig_21: 1523149534
+      demon-red_1_orig_22: 654722607
+      demon-red_1_orig_23: -262952835
+      demon-red_1_orig_24: 1299588473
+      demon-red_1_orig_25: 1208145917
+      demon-red_1_orig_26: -85571526
+      demon-red_1_orig_27: 591532634
+      demon-red_1_orig_28: -1739054056
+      demon-red_1_orig_29: 1862292172
+      demon-red_1_orig_3: 529074794
+      demon-red_1_orig_30: -819247479
+      demon-red_1_orig_31: -49295430
+      demon-red_1_orig_32: -237969859
+      demon-red_1_orig_33: -157552640
+      demon-red_1_orig_34: 2020305088
+      demon-red_1_orig_35: -2054042653
+      demon-red_1_orig_36: -1876308837
+      demon-red_1_orig_37: -1197145707
+      demon-red_1_orig_38: 1653542602
+      demon-red_1_orig_39: -217695469
+      demon-red_1_orig_4: 1926662084
+      demon-red_1_orig_40: -1531052857
+      demon-red_1_orig_41: -789251630
+      demon-red_1_orig_42: -1677611921
+      demon-red_1_orig_43: 329807041
+      demon-red_1_orig_44: 440826989
+      demon-red_1_orig_45: -269142459
+      demon-red_1_orig_46: -1096708848
+      demon-red_1_orig_47: -1441282451
+      demon-red_1_orig_48: 1761025460
+      demon-red_1_orig_49: -1712800199
+      demon-red_1_orig_5: 1503389720
+      demon-red_1_orig_50: -2144561204
+      demon-red_1_orig_51: 1041132425
+      demon-red_1_orig_52: 1542216027
+      demon-red_1_orig_53: -2061016052
+      demon-red_1_orig_6: 760721030
+      demon-red_1_orig_7: 410211895
+      demon-red_1_orig_8: -593290489
+      demon-red_1_orig_9: 1268670524
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

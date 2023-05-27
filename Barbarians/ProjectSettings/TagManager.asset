@@ -9,6 +9,7 @@ TagManager:
   - diablillo
   - guerrero
   - formacionController
+  - human
   layers:
   - Default
   - TransparentFX

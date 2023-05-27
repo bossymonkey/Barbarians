@@ -8,9 +8,21 @@ public class BattleController : MonoBehaviour
     private List<GameObject> demonTiles = new();
     private List<GameObject> humanTiles = new();
     [SerializeField] private GameObject warrior;
-    [SerializeField] private int warriorCount;
+    [SerializeField] private int humanCount;
     [SerializeField] private GameObject imp;
     [SerializeField] private int impCount;
+    [SerializeField] private GameObject berserker;
+    [SerializeField] private int berserkerCount;
+    [SerializeField] private GameObject knight;
+    [SerializeField] private int knightCount;
+    [SerializeField] private GameObject viking;
+    [SerializeField] private int vikingCount;
+    [SerializeField] private GameObject eye;
+    [SerializeField] private int eyeCount;
+    [SerializeField] private GameObject worm;
+    [SerializeField] private int wormCount;
+    [SerializeField] private GameObject devil;
+    [SerializeField] private int devilCount;
 
     public static BattleController instance;
 
@@ -33,8 +45,8 @@ public class BattleController : MonoBehaviour
     }
     public int WarriorCount
     {
-        get { return warriorCount;}
-        set { warriorCount = value; }
+        get { return humanCount;}
+        set { humanCount = value; }
     }
     public GameObject Imp
     {
@@ -56,4 +68,17 @@ public class BattleController : MonoBehaviour
         get { return humanTiles; }
         set { humanTiles = value; }
     }
+
+    public GameObject Berserker { get => berserker; set => berserker = value; }
+    public int BerserkerCount { get => berserkerCount; set => berserkerCount = value; }
+    public GameObject Knight { get => knight; set => knight = value; }
+    public int KnightCount { get => knightCount; set => knightCount = value; }
+    public GameObject Viking { get => viking; set => viking = value; }
+    public int VikingCount { get => vikingCount; set => vikingCount = value; }
+    public GameObject Eye { get => eye; set => eye = value; }
+    public int EyeCount { get => eyeCount; set => eyeCount = value; }
+    public GameObject Worm { get => worm; set => worm = value; }
+    public int WormCount { get => wormCount; set => wormCount = value; }
+    public GameObject Devil { get => devil; set => devil = value; }
+    public int DevilCount { get => devilCount; set => devilCount = value; }
 }

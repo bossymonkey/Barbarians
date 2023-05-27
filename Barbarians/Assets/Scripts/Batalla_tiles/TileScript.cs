@@ -28,13 +28,13 @@ public class TileScript : MonoBehaviour
             instanceUnit.transform.parent = gameObject.transform;
             if (instanceUnit.CompareTag("demon"))
             {
-                //Debug.Log("demonio a llegado a la casilla " + tileposx + "," + tileposy);
+                //Debug.Log("demonio ha llegado a la casilla " + tileposx + "," + tileposy);
 
                 BattleController.instance.DemonTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
             }
-            else if (instanceUnit.CompareTag("barbarian"))
+            else if (instanceUnit.CompareTag("human"))
             {
-                //Debug.Log("humano a llegado a la casilla " + tileposx + "," + tileposy);
+                //Debug.Log("humano ha llegado a la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
             }
         }
@@ -45,12 +45,12 @@ public class TileScript : MonoBehaviour
         {
             if (unit.CompareTag("demon"))
             {
-                //Debug.Log("demonio a abandonado la casilla " + tileposx + "," + tileposy);
+                //Debug.Log("demonio ha abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.DemonTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
             }
             else if (unit.CompareTag("barbarian"))
             {
-                //Debug.Log("humano a abandonado la casilla " + tileposx + "," + tileposy);
+                //Debug.Log("humano ha abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
             }
             Destroy(gameObject.transform.GetChild(0).gameObject);
@@ -63,14 +63,9 @@ public class TileScript : MonoBehaviour
         int finaldmg;
         finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
         if(finaldmg < 1) {finaldmg = 1;}
-        if (unit.CompareTag("demon") && unit.name == "Diablillo")
-        {
-            //unit.GetComponent<Imp>().anim.SetTrigger("atacando");
-        }
-        else if (unit.CompareTag("barbarian") && unit.name == "Guerrero")
-        {
-            //unit.GetComponent<Warrior>().anim.SetTrigger("atacando");
-        }
+
+        unit.GetComponent<Animator>().SetTrigger("attack");
+
         Debug.Log(unit.name + "ha ataca a " + target.GetComponent<TileScript>().unit.name + " causando " + finaldmg + " de daño, y tiene " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + "de vida");
         target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
         Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
@@ -238,7 +233,7 @@ public class TileScript : MonoBehaviour
                 }
             }
         }
-        Debug.Log(unit.name + " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
+        //Debug.Log(unit.name + " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
     }
     public int Chebyshev(KeyValuePair<int, int> position1, KeyValuePair<int, int> position2)
     {
