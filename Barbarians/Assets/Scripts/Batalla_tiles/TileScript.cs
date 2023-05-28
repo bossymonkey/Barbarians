@@ -41,6 +41,12 @@ public class TileScript : MonoBehaviour
     }
     private void OnDisable()
     {
+        try
+        {
+            Destroy(gameObject.transform.GetChild(0).gameObject);
+        }
+        catch { }
+        target = null;
         if (unit != null)
         {
             if (unit.CompareTag("demon"))
@@ -53,7 +59,6 @@ public class TileScript : MonoBehaviour
                 //Debug.Log("humano ha abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
             }
-            Destroy(gameObject.transform.GetChild(0).gameObject);
             unit = null;
         }
     }
@@ -64,7 +69,7 @@ public class TileScript : MonoBehaviour
         finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
         if(finaldmg < 1) {finaldmg = 1;}
 
-        unit.GetComponent<Animator>().SetTrigger("attack");
+        //unit.GetComponent<Animator>().SetTrigger("attack");
 
         Debug.Log(unit.name + "ha ataca a " + target.GetComponent<TileScript>().unit.name + " causando " + finaldmg + " de daño, y tiene " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + "de vida");
         target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
@@ -97,34 +102,42 @@ public class TileScript : MonoBehaviour
         {
             if (CheckEnemyInTile(FORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + FORWARD.Key, Tileposy + FORWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPFORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPFORWARD.Key, Tileposy + UPFORWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPWARD.Key, Tileposy + UPWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPBACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPBACKWARD.Key, Tileposy + UPBACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(BACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + BACKWARD.Key, Tileposy + BACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNBACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNBACKWARD.Key, Tileposy + DOWNBACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNWARD.Key, Tileposy + DOWNWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNFORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNFORWARD.Key, Tileposy + DOWNFORWARD.Value];
                 return true;
             }
             else return false;
@@ -134,34 +147,42 @@ public class TileScript : MonoBehaviour
         {
             if (CheckEnemyInTile(FORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + FORWARD.Key, Tileposy + FORWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNFORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNFORWARD.Key, Tileposy + DOWNFORWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNWARD.Key, Tileposy + DOWNWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(DOWNBACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + DOWNBACKWARD.Key, Tileposy + DOWNBACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(BACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + BACKWARD.Key, Tileposy + BACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPBACKWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPBACKWARD.Key, Tileposy + UPBACKWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPWARD.Key, Tileposy + UPWARD.Value];
                 return true;
             }
             if (CheckEnemyInTile(UPFORWARD))
             {
+                target = TileController.instance.Tiles[tileposx + UPFORWARD.Key, Tileposy + BACKWARD.Value];
                 return true;
             }
             else return false;
@@ -220,6 +241,7 @@ public class TileScript : MonoBehaviour
                     enemy.GetComponentInParent<TileScript>().Tileposx,
                     enemy.GetComponentInParent<TileScript>().Tileposx);
                 distancia = Chebyshev(position1, position2);
+                Debug.Log("distancia " + distancia);
             }
             else
             {

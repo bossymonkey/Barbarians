@@ -133,7 +133,7 @@ public class StartBattleRoutine : MonoBehaviour
         //Debug.Log("demoncount " + BattleController.instance.DemonTiles.Count);
         foreach (GameObject demon in BattleController.instance.DemonTiles.ToList())
         {
-            Debug.Log(demon.GetComponentInChildren<Unit>().name);
+            //Debug.Log(demon.GetComponentInChildren<Unit>().name);
             if (demon.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 demon.GetComponent<TileScript>().Attack();
