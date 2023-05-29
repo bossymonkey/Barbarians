@@ -425,21 +425,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warrior: {fileID: 2143967416203953571, guid: 2c0afbc2eebe47c4da0b4da7c63f181a, type: 3}
-  humanCount: 20
+  humanCount: 1
   imp: {fileID: 6941533090287250282, guid: 38c9e664c03915b48a076a22b152f008, type: 3}
-  impCount: 20
+  impCount: 1
   berserker: {fileID: 5551423092034362068, guid: 7e3bc1c2fd04a724c9284bf3e0c25c81, type: 3}
-  berserkerCount: 20
+  berserkerCount: 1
   knight: {fileID: 567992904211534587, guid: 19e6131847978984385675e690ee35eb, type: 3}
-  knightCount: 20
+  knightCount: 1
   viking: {fileID: 6968873585046384668, guid: 8b5751527e609e340b6e893f8be15126, type: 3}
-  vikingCount: 20
+  vikingCount: 1
   eye: {fileID: 7329852134111614937, guid: aa55076a4510cfb478e88aab23fb13c0, type: 3}
-  eyeCount: 20
+  eyeCount: 1
   worm: {fileID: 3086114632702848962, guid: ebb057686ddd9c34996410d0c6a4441a, type: 3}
-  wormCount: 20
+  wormCount: 1
   devil: {fileID: 4875243707505437015, guid: 8f81e354b63686f4b9bdab37a1221b44, type: 3}
-  devilCount: 20
+  devilCount: 1
 --- !u!1 &1934943200
 GameObject:
   m_ObjectHideFlags: 0

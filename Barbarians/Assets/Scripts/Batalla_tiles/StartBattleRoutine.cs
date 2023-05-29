@@ -20,11 +20,38 @@ public class StartBattleRoutine : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {
+            if (BattleController.instance.CheckVictory())
+            {
+                break;
+            }
             HumanTurn();
+            Debug.Log("conteo humano "+BattleController.instance.HumanTiles.Count);
+            foreach(GameObject human in BattleController.instance.HumanTiles)
+            {
+                if (human.GetComponent<TileScript>().Unit.GetComponent<Unit>().Attacking)
+                {
+                    human.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("attack");
+                }
+                else human.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("idle");
+            }
             yield return new WaitForSeconds(0.2f);
+            if (BattleController.instance.CheckVictory())
+            {
+                break;
+            }
             DemonTurn();
+            Debug.Log("conteo demon " + BattleController.instance.DemonTiles.Count);
+            foreach (GameObject demon in BattleController.instance.DemonTiles)
+            {
+                if (demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().Attacking)
+                {
+                    demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("attack");
+                }
+                else demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("idle");
+            }
             yield return new WaitForSeconds(0.2f);
         }
+        Debug.Log("partida finalizada");
     }
     public void Spawn()
     {

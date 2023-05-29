@@ -19,11 +19,19 @@ public class TileScript : MonoBehaviour
     private readonly KeyValuePair<int, int> DOWNFORWARD = new KeyValuePair<int, int>(1, -1);
     private readonly KeyValuePair<int, int> DOWNBACKWARD = new KeyValuePair<int, int>(-1, -1);
 
+    private void Update()
+    {
+        if(unit == null)
+        {
+            gameObject.GetComponent<TileScript>().enabled = false;
+        }
+    }
     private void OnEnable()
     {
         GameObject instanceUnit = null;
         if (unit != null)
         {
+            unit.GetComponent<Unit>().Attacking = false;
             instanceUnit = Instantiate(unit,new Vector3(transform.position.x,transform.position.y,(transform.position.z-((float)tileposy/10))), Quaternion.identity);
             instanceUnit.transform.parent = gameObject.transform;
             if (instanceUnit.CompareTag("demon"))
@@ -31,11 +39,19 @@ public class TileScript : MonoBehaviour
                 //Debug.Log("demonio ha llegado a la casilla " + tileposx + "," + tileposy);
 
                 BattleController.instance.DemonTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
+                /*foreach (GameObject demonTile in BattleController.instance.DemonTiles)
+                {
+                    Debug.Log(demonTile.name + " x:" + demonTile.GetComponent<TileScript>().tileposx + " y:" + demonTile.GetComponent<TileScript>().tileposy);
+                }*/
             }
             else if (instanceUnit.CompareTag("human"))
             {
                 //Debug.Log("humano ha llegado a la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Add(TileController.instance.Tiles[tileposx, tileposy]);
+                /*foreach (GameObject humanTile in BattleController.instance.HumanTiles)
+                {
+                    Debug.Log(humanTile.name + " x:" + humanTile.GetComponent<TileScript>().tileposx + " y:" + humanTile.GetComponent<TileScript>().tileposy);
+                }*/
             }
         }
     }
@@ -49,12 +65,14 @@ public class TileScript : MonoBehaviour
         target = null;
         if (unit != null)
         {
+            unit.GetComponent<Unit>().Attacking = false;
             if (unit.CompareTag("demon"))
             {
                 //Debug.Log("demonio ha abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.DemonTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
+
             }
-            else if (unit.CompareTag("barbarian"))
+            else if (unit.CompareTag("human"))
             {
                 //Debug.Log("humano ha abandonado la casilla " + tileposx + "," + tileposy);
                 BattleController.instance.HumanTiles.Remove(TileController.instance.Tiles[tileposx, tileposy]);
@@ -64,20 +82,21 @@ public class TileScript : MonoBehaviour
     }
     public void Attack()
     {
-        Debug.Log("el target tiene "+ target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
+        //Debug.Log("el target tiene "+ target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
         int finaldmg;
-        finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
-        if(finaldmg < 1) {finaldmg = 1;}
-
-        //unit.GetComponent<Animator>().SetTrigger("attack");
-
-        Debug.Log(unit.name + "ha ataca a " + target.GetComponent<TileScript>().unit.name + " causando " + finaldmg + " de daño, y tiene " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + "de vida");
-        target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
-        Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
-        if(target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health < 1)
+        try
         {
-            target.GetComponent<TileScript>().enabled = false;
+            finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
+            if (finaldmg < 1) { finaldmg = 1; }
+            target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
+            Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
+            unit.GetComponent<Unit>().Attacking = true;
+            if (target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health < 1)
+            {
+                target.GetComponent<TileScript>().enabled = false;
+            }
         }
+        catch { }
     }
     private bool CheckEnemyInTile(KeyValuePair<int,int> position)
     {
@@ -224,38 +243,52 @@ public class TileScript : MonoBehaviour
     } 
     public void GetTarget(List<GameObject> enemies)
     {
-        int distancia = -1;
+        bool first = false;
+        int distancia = 0;
+        List<GameObject> targets = new List<GameObject>();
         KeyValuePair<int, int> position1;
         KeyValuePair<int, int> position2;
         position1 = new KeyValuePair<int, int>(
-            GetComponentInParent<TileScript>().Tileposx,
-            GetComponentInParent<TileScript>().Tileposy
+            GetComponent<TileScript>().Tileposx,
+            GetComponent<TileScript>().Tileposy
             );
-
+        Debug.Log(enemies.Count+" gameobjects en lista");
         foreach (GameObject enemy in enemies)
         {
-            if (distancia < 0)
+            if (!first)
             {
-                target = enemy;
                 position2 = new KeyValuePair<int, int>(
-                    enemy.GetComponentInParent<TileScript>().Tileposx,
-                    enemy.GetComponentInParent<TileScript>().Tileposx);
+                    enemy.GetComponent<TileScript>().Tileposx,
+                    enemy.GetComponent<TileScript>().Tileposx);
                 distancia = Chebyshev(position1, position2);
-                Debug.Log("distancia " + distancia);
+                //Debug.Log("distancia " + distancia);
             }
             else
             {
                 position2 = new KeyValuePair<int, int>(
-                    enemy.GetComponentInParent<TileScript>().Tileposx,
-                    enemy.GetComponentInParent<TileScript>().Tileposx);
+                    enemy.GetComponent<TileScript>().Tileposx,
+                    enemy.GetComponent<TileScript>().Tileposx);
                 if (distancia < Chebyshev(position1, position2))
                 {
-                    target = enemy;
                     distancia = Chebyshev(position1, position2);
+                    //Debug.Log("distancia " + distancia);
                 }
             }
         }
-        //Debug.Log(unit.name + " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
+        foreach (GameObject enemy in enemies)
+        {
+            position2 = new KeyValuePair<int, int>(
+                    enemy.GetComponent<TileScript>().Tileposx,
+                    enemy.GetComponent<TileScript>().Tileposx);
+            if (Chebyshev(position1, position2) == distancia)
+            {
+                targets.Add(enemy);
+            }
+        }
+        int rng = Random.Range((int)0, (int)targets.Count);
+        //Debug.Log("el numero random es "+ rng);
+        target = targets[rng];
+        Debug.Log(gameObject.name +" x:"+tileposx+" y:"+tileposy+ " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
     }
     public int Chebyshev(KeyValuePair<int, int> position1, KeyValuePair<int, int> position2)
     {

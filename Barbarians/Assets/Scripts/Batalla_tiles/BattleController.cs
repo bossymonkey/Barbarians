@@ -37,6 +37,18 @@ public class BattleController : MonoBehaviour
             instance = this;
         }
     }
+    public bool CheckVictory()
+    {
+        if (demonTiles.Count == 0)
+        {
+            return true;
+        }
+        else if (humanTiles.Count == 0)
+        {
+            return true;
+        }
+        else return false;
+    }
 
     public GameObject Warrior
     {

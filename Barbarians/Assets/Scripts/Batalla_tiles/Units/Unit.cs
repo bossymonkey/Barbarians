@@ -10,6 +10,13 @@ public class Unit : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int damage;
     [SerializeField] private int armor;
+    [SerializeField] private bool attacking = false;
+    [NonSerialized] public Animator animUnit;
+    private void Awake()
+    {
+
+        animUnit = GetComponent<Animator>();
+    }
 
     public void StopTranslate()
     {
@@ -38,5 +45,10 @@ public class Unit : MonoBehaviour
     {
         get { return armor; }
         set { armor = value; }
+    }
+    public bool Attacking
+    {
+        get { return attacking; }
+        set { attacking = value; }
     }
 }
