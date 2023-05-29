@@ -10,12 +10,19 @@ public class Unit : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int damage;
     [SerializeField] private int armor;
-    [SerializeField] private bool attacking = false;
-    [NonSerialized] public Animator animUnit;
-    private void Awake()
+    [SerializeField] private bool attacking;
+    [NonSerialized]public Animator animUnit;
+    private void Start()
     {
-
         animUnit = GetComponent<Animator>();
+    }
+    private void Update()
+    {
+        if (attacking)
+        {
+            animUnit.SetTrigger("attack");
+        }
+        else animUnit.SetTrigger("idle");
     }
 
     public void StopTranslate()

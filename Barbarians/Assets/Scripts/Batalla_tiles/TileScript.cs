@@ -31,7 +31,7 @@ public class TileScript : MonoBehaviour
         GameObject instanceUnit = null;
         if (unit != null)
         {
-            unit.GetComponent<Unit>().Attacking = false;
+            //unit.GetComponent<Unit>().Attacking = false;
             instanceUnit = Instantiate(unit,new Vector3(transform.position.x,transform.position.y,(transform.position.z-((float)tileposy/10))), Quaternion.identity);
             instanceUnit.transform.parent = gameObject.transform;
             if (instanceUnit.CompareTag("demon"))
@@ -89,14 +89,13 @@ public class TileScript : MonoBehaviour
             finaldmg = unit.GetComponent<Unit>().Damage - target.GetComponent<TileScript>().unit.GetComponent<Unit>().Armor;
             if (finaldmg < 1) { finaldmg = 1; }
             target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health -= finaldmg;
-            Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
-            unit.GetComponent<Unit>().Attacking = true;
+            //Debug.Log(target.GetComponent<TileScript>().unit.name + " se queda con " + target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health + " de vida");
             if (target.GetComponent<TileScript>().unit.GetComponent<Unit>().Health < 1)
             {
                 target.GetComponent<TileScript>().enabled = false;
             }
         }
-        catch { }
+        catch { Debug.Log(unit.name + "ha saltado un golpe"); }
     }
     private bool CheckEnemyInTile(KeyValuePair<int,int> position)
     {
@@ -252,7 +251,7 @@ public class TileScript : MonoBehaviour
             GetComponent<TileScript>().Tileposx,
             GetComponent<TileScript>().Tileposy
             );
-        Debug.Log(enemies.Count+" gameobjects en lista");
+        //Debug.Log(enemies.Count+" gameobjects en lista");
         foreach (GameObject enemy in enemies)
         {
             if (!first)
@@ -288,7 +287,7 @@ public class TileScript : MonoBehaviour
         int rng = Random.Range((int)0, (int)targets.Count);
         //Debug.Log("el numero random es "+ rng);
         target = targets[rng];
-        Debug.Log(gameObject.name +" x:"+tileposx+" y:"+tileposy+ " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
+        //Debug.Log(gameObject.name + " x:" + tileposx + " y:" + tileposy + " tiene como objetivo " + target.GetComponent<TileScript>().Tileposx + "," + target.GetComponent<TileScript>().Tileposy);
     }
     public int Chebyshev(KeyValuePair<int, int> position1, KeyValuePair<int, int> position2)
     {
@@ -454,7 +453,7 @@ public class TileScript : MonoBehaviour
     }
     private void Move(KeyValuePair<int, int> coords)
     {
-        
+        unit.GetComponent<Unit>().Attacking = false;
         TileController.instance.Tiles[tileposx + coords.Key, tileposy + coords.Value].GetComponent<TileScript>().Unit = unit;
         TileController.instance.Tiles[tileposx + coords.Key, tileposy + coords.Value].GetComponent<TileScript>().enabled = true;
         gameObject.GetComponent<TileScript>().enabled = false;

@@ -24,32 +24,30 @@ public class StartBattleRoutine : MonoBehaviour
             {
                 break;
             }
-            HumanTurn();
-            Debug.Log("conteo humano "+BattleController.instance.HumanTiles.Count);
-            foreach(GameObject human in BattleController.instance.HumanTiles)
+            try
             {
-                if (human.GetComponent<TileScript>().Unit.GetComponent<Unit>().Attacking)
-                {
-                    human.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("attack");
-                }
-                else human.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("idle");
+                HumanTurn();
             }
-            yield return new WaitForSeconds(0.2f);
+            catch
+            {
+                Debug.Log("ha ocurrido una excepcion durante el turno humano");
+            }
+            //Debug.Log("conteo humano "+BattleController.instance.HumanTiles.Count);
+            yield return new WaitForSeconds(0.5f);
             if (BattleController.instance.CheckVictory())
             {
                 break;
             }
-            DemonTurn();
-            Debug.Log("conteo demon " + BattleController.instance.DemonTiles.Count);
-            foreach (GameObject demon in BattleController.instance.DemonTiles)
+            try
             {
-                if (demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().Attacking)
-                {
-                    demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("attack");
-                }
-                else demon.GetComponent<TileScript>().Unit.GetComponent<Unit>().animUnit.SetTrigger("idle");
+                DemonTurn();
             }
-            yield return new WaitForSeconds(0.2f);
+            catch
+            {
+                Debug.Log("ha ocurrido una excepcion durante el turno demonio");
+            }
+            //Debug.Log("conteo demon " + BattleController.instance.DemonTiles.Count);
+            yield return new WaitForSeconds(0.5f);
         }
         Debug.Log("partida finalizada");
     }
@@ -145,6 +143,7 @@ public class StartBattleRoutine : MonoBehaviour
             if (human.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 human.GetComponent<TileScript>().Attack();
+                human.transform.GetChild(0).GetComponent<Unit>().Attacking = true;
             }
             else
             {
@@ -164,6 +163,7 @@ public class StartBattleRoutine : MonoBehaviour
             if (demon.GetComponent<TileScript>().CheckEnemyinRange())
             {
                 demon.GetComponent<TileScript>().Attack();
+                demon.transform.GetChild(0).GetComponent<Unit>().Attacking = true;
             }
             else
             {
