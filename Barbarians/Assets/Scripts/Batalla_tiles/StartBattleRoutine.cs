@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartBattleRoutine : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class StartBattleRoutine : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         Debug.Log("partida finalizada");
+        SceneManager.LoadScene("Menu");
     }
     public void Spawn()
     {

@@ -28,6 +28,15 @@ public class BattleController : MonoBehaviour
 
     private void Awake()
     {
+        humanCount = UIcontroller.warriorC;
+        impCount = UIcontroller.impC;
+        berserkerCount = UIcontroller.berserkerC;
+        knightCount = UIcontroller.knightC;
+        vikingCount = UIcontroller.vikingC;
+        eyeCount = UIcontroller.eyeC;
+        wormCount = UIcontroller.wormC;
+        devilCount = UIcontroller.devilC;
+
         if (instance != null && instance != this)
         {
             Destroy(this);

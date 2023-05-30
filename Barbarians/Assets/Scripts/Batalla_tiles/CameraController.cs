@@ -9,14 +9,14 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            if (transform.position.x < 38)
+            if (transform.position.x < 37)
             {
                 transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
             }
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            if (transform.position.x > -32)
+            if (transform.position.x > -31)
             {
                 transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
             }
